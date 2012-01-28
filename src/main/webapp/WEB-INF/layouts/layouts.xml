@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+    <definition name="default" template="/WEB-INF/layouts/default.jspx">
+        <put-attribute name="header" value="/WEB-INF/views/header.jspx"/>
+
+        <put-attribute name="menuAdmin" value="/WEB-INF/views/menuAdmin.jspx"/>
+        <put-attribute name="menuWebGatherer" value="/WEB-INF/views/menuWebGatherer.jspx"/>
+        <put-attribute name="menuWebsite" value="/WEB-INF/views/menuWebsite.jspx"/>
+
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jspx"/>
+        <put-attribute name="ajaxLoadTest" value="/WEB-INF/views/ajaxLoadTest.jspx"/>
+        <put-attribute name="dashboard"
+                       value="/WEB-INF/views/dashboard/dashboard.jspx"/>
+    </definition>
+
+    <definition name="ajaxComponent" template="/WEB-INF/layouts/ajaxComponent.jspx">
+    </definition>
+
+    <definition name="public" template="/WEB-INF/layouts/default.jspx">
+        <put-attribute name="header" value="/WEB-INF/views/header.jspx"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jspx"/>
+        <put-attribute name="ajaxLoadTest" value="/WEB-INF/views/ajaxLoadTest.jspx"/>
+        <put-attribute name="dashboard"
+                       value="/WEB-INF/views/dashboard/dashboard.jspx"/>
+    </definition>
+
+
+    <definition name="enhancedBrowser" template="/WEB-INF/layouts/enhancedBrowser.jspx">
+        <put-attribute name="campaign" value="/WEB-INF/views/campaigns/selectForSession.jspx"/>
+
+    </definition>
+
+</tiles-definitions>

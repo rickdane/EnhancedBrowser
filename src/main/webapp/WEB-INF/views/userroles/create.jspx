@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rickdane_springmodularizedproject_domain_UserRole" modelAttribute="userRole" path="/userroles" render="${empty dependencies}" z="04hXNjVXrtbl2p40r0bGUXg/Ztw=">
+        <field:select field="userEntry" id="c_com_rickdane_springmodularizedproject_domain_UserRole_userEntry" itemValue="id" items="${users}" path="/users" required="true" z="apxXSU84FkgJhKTn+o2Jb+9cw+Q="/>
+        <field:select field="roleEntry" id="c_com_rickdane_springmodularizedproject_domain_UserRole_roleEntry" itemValue="id" items="${roles}" path="/roles" required="true" z="1lgZU40PMTQICo3tqNWq2Vueak4="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_domain_UserRole" render="${not empty dependencies}" z="+OjOft8XSdDWcDSRFBiAXImKEaA="/>
+</div>

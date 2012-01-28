@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:security="http://www.springframework.org/security/tags" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="user-managed">
+        <menu:category id="c_receivedemail" z="LvogVESPtGd9cod10k1AORswS8w=">
+            <menu:item id="i_receivedemail_new" messageCode="global_menu_new" url="/receivedemails?form" z="T+xzvE0GekxkAd2Y5xNOp7IFHX4="/>
+            <menu:item id="i_receivedemail_list" messageCode="global_menu_list" url="/receivedemails?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gLAvbN5/qd+nMSMihUFx+DIH4As="/>
+        </menu:category>
+        <menu:category id="c_userrole" z="C4C1ZBdes4PUIjEM3Ajwwhn1EwA=">
+            <menu:item id="i_userrole_new" messageCode="global_menu_new" url="/userroles?form" z="qYpuuJuPupoYjD8LM0ISnxylj4o="/>
+            <menu:item id="i_userrole_list" messageCode="global_menu_list" url="/userroles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="fTjcT4INZTypLgu+ZHmwzE55ORs="/>
+        </menu:category>
+        <menu:category id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
+            <menu:item id="i_website_new" messageCode="global_menu_new" url="/websites?form" z="TZZW+JWeOAGWfGyUM5qBHbSJLwc="/>
+            <menu:item id="i_website_list" messageCode="global_menu_list" url="/websites?page=1&amp;size=${empty param.size ? 10 : param.size}" z="s8I1JDcQyV2Kk2zbhf1KRXcvLWs="/>
+        </menu:category>
+        <menu:category id="c_rawscrapeddata" z="QhrPKad2VTPR42a2WzsZ5+H1VZc=">
+            <menu:item id="i_rawscrapeddata_new" messageCode="global_menu_new" url="/rawscrapeddatas?form" z="br3sTZ4euOfBiG0U7rjL9VTAFDU="/>
+            <menu:item id="i_rawscrapeddata_list" messageCode="global_menu_list" url="/rawscrapeddatas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="VTQHW7ufcppYcKAQfGs5ufMREjY="/>
+        </menu:category>
+        <menu:category id="c_emailtemplatesubject" z="C52F9P+Se046b5BX2ATX51prO5g=">
+            <menu:item id="i_emailtemplatesubject_new" messageCode="global_menu_new" url="/emailtemplatesubjects?form" z="brd7knhSdDQ7d4D4vrnEnnk5lnY="/>
+            <menu:item id="i_emailtemplatesubject_list" messageCode="global_menu_list" url="/emailtemplatesubjects?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Ca33czmckqKWUFUnnZPRBsZEAh8="/>
+        </menu:category>
+        <menu:category id="c_url" z="xMCSwmIFc560g2X06/5FY4fMI7k=">
+            <menu:item id="i_url_new" messageCode="global_menu_new" url="/urls?form" z="8IMcvCgKx636+cwzo8unWfomy00="/>
+            <menu:item id="i_url_list" messageCode="global_menu_list" url="/urls?page=1&amp;size=${empty param.size ? 10 : param.size}" z="rfB12yojFQNCmT+PX4XDxSZuxhE="/>
+        </menu:category>
+        <menu:category id="c_scraper" z="0phro3VhawS7O5Xywt4nhyeIFkA=">
+            <menu:item id="i_scraper_new" messageCode="global_menu_new" url="/scrapers?form" z="MQHC7VHcTZEYbKVIRcpZ9vDxIso="/>
+            <menu:item id="i_scraper_list" messageCode="global_menu_list" url="/scrapers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="r8TMkIjUKz022jlWCnI9IaN8oFU="/>
+        </menu:category>
+        <menu:category id="c_datarecord" z="kApOjaD3vrfmTgPS9vJOvtb6BbA=">
+            <menu:item id="i_datarecord_new" messageCode="global_menu_new" url="/datarecords?form" z="XE3fbRgp4p4arpFNEwcXizqfLNo="/>
+            <menu:item id="i_datarecord_list" messageCode="global_menu_list" url="/datarecords?page=1&amp;size=${empty param.size ? 10 : param.size}" z="FJQeoI55f5ntSAnA/29sOdJ6OSg="/>
+        </menu:category>
+        <menu:category id="c_campaign" z="my4pxKtYtHT02CSAw9Lvmut7XbI=">
+            <menu:item id="i_campaign_new" messageCode="global_menu_new" url="/campaigns?form" z="XGW4oMwJvrJL6Hs7pn+9Hru6fao="/>
+            <menu:item id="i_campaign_list" messageCode="global_menu_list" url="/campaigns?page=1&amp;size=${empty param.size ? 10 : param.size}" z="slEVxjLLhMTf81k15jhOxzTRR0M="/>
+        </menu:category>
+        <menu:category id="c_role" z="LPygIx2EuEArCzqsfpQQev0lHyc=">
+            <menu:item id="i_role_new" messageCode="global_menu_new" url="/roles?form" z="WNB2HvnzvtbOA3r7qL1gqrUOq8g="/>
+            <menu:item id="i_role_list" messageCode="global_menu_list" url="/roles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DVFtqj4xcHbEiJh6bgI7Tyre3ec="/>
+        </menu:category>
+        <menu:category id="c_emailtemplatebody" z="QkV+bH3A41gT5JUY+BMwUwmkieU=">
+            <menu:item id="i_emailtemplatebody_new" messageCode="global_menu_new" url="/emailtemplatebodys?form" z="htGXkORsfIqIh1W78A4G6xy8IUI="/>
+            <menu:item id="i_emailtemplatebody_list" messageCode="global_menu_list" url="/emailtemplatebodys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="C4g2Td8BjpXeJcacls1x8TLqEFc="/>
+        </menu:category>
+        <menu:category id="c_user" z="uoTSf/uIZ821ZppidzS9aO776yk=">
+            <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form" z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
+            <menu:item id="i_user_list" messageCode="global_menu_list" url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
+        </menu:category>
+        <menu:category id="c_emailtemplatecategory" z="42zrKkS9MUFWQcEUxRyM2IdM50o=">
+            <menu:item id="i_emailtemplatecategory_new" messageCode="global_menu_new" url="/emailtemplatecategorys?form" z="EyYKhne9MmtA6gtIiSIn0TIUrRA="/>
+            <menu:item id="i_emailtemplatecategory_list" messageCode="global_menu_list" url="/emailtemplatecategorys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Uyjt6UdzjhO05t6YE2ibjDcuQzk="/>
+        </menu:category>
+        <menu:category id="c_emailaddress" z="ft2ufAWcMGTr4Fu66gXBO29JPvc=">
+            <menu:item id="i_emailaddress_new" messageCode="global_menu_new" url="/emailaddresses?form" z="o+0gfcb2Vw/pHfeAFUp8HxxgUD0="/>
+            <menu:item id="i_emailaddress_list" messageCode="global_menu_list" url="/emailaddresses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="tEx66B/xo9bRju5cI9yGYUsCWz0="/>
+        </menu:category>
+        <menu:category id="c_urlblockpattern" z="LU8Kpo+A07Xw/0nEXhN4a3ayDGg=">
+            <menu:item id="i_urlblockpattern_new" messageCode="global_menu_new" url="/urlblockpatterns?form" z="cAy/Z/XNf5cnosM1bS+SPKSEu3U="/>
+            <menu:item id="i_urlblockpattern_list" messageCode="global_menu_list" url="/urlblockpatterns?page=1&amp;size=${empty param.size ? 10 : param.size}" z="K9YWZ/wXSwm8fA4sYPlGs8n0Pjw="/>
+        </menu:category>
+    </menu:menu>
+</div>

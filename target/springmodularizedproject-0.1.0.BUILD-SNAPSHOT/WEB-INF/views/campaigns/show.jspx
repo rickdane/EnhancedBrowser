@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" object="${campaign}" path="/campaigns" z="hckN1UwqGaIdS8jl2xbHplW0occ=">
+        <field:display field="name" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_name" object="${campaign}" z="JZgFrP/MW4G1KEyjT0OXBlt1cBI="/>
+        <field:display field="datarecords" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" object="${campaign}" z="qbVvFhnVdoxGtOQlpohw8ejHJnw="/>
+        <field:display field="campaignEmailScrapeOptions" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" object="${campaign}" z="+PlL4q/fdz260KmHcvneaDTAA8g="/>
+        <field:display field="emailTemplateCategories" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_emailTemplateCategories" object="${campaign}" z="nQfph1DvVSqutOe+eTPTSvqN9+Q="/>
+        <field:display field="campaignType" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignType" object="${campaign}" z="EFB/cZfAxVICS9qbFGDejkjzaz4="/>
+        <field:display field="campaign" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaign" object="${campaign}" z="IQvTtiQAK93zoHQXHz11cK/cR5o="/>
+    </page:show>
+</div>

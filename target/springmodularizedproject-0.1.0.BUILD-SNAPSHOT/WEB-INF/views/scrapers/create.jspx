@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" modelAttribute="scraper" path="/scrapers" render="${empty dependencies}" z="ZuZVVmlQYo0eiTMO6OwIrS+D+JE=">
+        <field:input field="name" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" z="1guwWBABtr+Wpdlny828K+u47cg="/>
+        <!--<field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="pd0BiGH4TCTL9XbXx3xLV0vF/Ck="/>-->
+        <!--<field:select field="status" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" items="${processstatuses}" path="processstatuses" z="tjPsBq2YelxT/SgOqpyl6ED1xlQ="/>-->
+        <field:select field="type" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" items="${types}" path="types" z="user-managed"/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" itemValue="id" items="${campaigns}" path="/campaigns" z="/5llCBOLbRFJGHG1h5SvctPcN1Y="/>
+        <field:input field="urlPrefix" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPrefix" label="URL Pre-fix" z="user-managed"/>
+        <field:input field="urlPostfix" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPostfix" label="URL Post-fix" z="user-managed"/>
+        <field:input field="pageIncrementAmnt" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" label="Results Per Page" z="user-managed"/>
+        <field:input field="keyword" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" label="Search Keyword" z="user-managed"/>
+        <field:input field="baseDomainName" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" label="Base Domain Name" z="user-managed"/>
+        <field:input field="javaScriptLinkIdentifier" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_javaScriptLinkIdentifier" label="Javascript Link Identifier" z="user-managed"/>
+        <!--<field:input field="fkCampaignId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" z="EefhdmFsVn8zy7u/7K2xUk6zORA="/>-->
+        <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="pd0BiGH4TCTL9XbXx3xLV0vF/Ck="/>
+        <field:select field="status" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" items="${processstatuses}" path="processstatuses" z="tjPsBq2YelxT/SgOqpyl6ED1xlQ="/>
+        <field:input field="fkCampaignId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" z="EefhdmFsVn8zy7u/7K2xUk6zORA="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" render="${not empty dependencies}" z="JN9kpDt40fSiS7FtedYmtydTHaU="/>
+</div>

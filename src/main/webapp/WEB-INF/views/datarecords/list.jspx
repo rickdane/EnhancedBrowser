@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Datarecord" items="${datarecords}" z="MAWULPzfJg64KaNOtO6YMwcRCUM=">
+        <table:table data="${datarecords}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Datarecord" path="/datarecords" z="1etaVG+bGH3iM/buj37A9DCJob0=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Datarecord_entry" property="entry" z="BdALOYVbBtC/c+Hk5nYzSVQIApE="/>
+        </table:table>
+    </page:list>
+</div>

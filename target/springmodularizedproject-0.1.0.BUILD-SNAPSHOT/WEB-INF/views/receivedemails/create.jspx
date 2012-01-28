@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail" modelAttribute="receivedEmail" path="/receivedemails" render="${empty dependencies}" z="kTU/syV490oLe8WUYOkBiNjyp4M=">
+        <field:input field="fromAddress" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_fromAddress" z="Iq4Hm2qolFOLMwpxjSvIiZF/qgQ="/>
+        <field:input field="toAddress" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_toAddress" z="5LOP3PiyU32S92nXmmhWoLMRhn0="/>
+        <field:textarea field="subject" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_subject" z="IqR0ItONYWm6+57DLbJcTXTPUI4="/>
+        <field:input field="content" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_content" z="5p8u9Zoc0GMdflvn7wwGGz9G+98="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail" render="${not empty dependencies}" z="XYBiuo3Lmq+yCZE26lHOMooOd/E="/>
+</div>

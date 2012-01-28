@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:security="http://www.springframework.org/security/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" id="blank" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<util:blank>
+
+	</util:blank>
+
+	<!--<security:authorize access="hasRole('ROLE_ADMIN')">-->
+		<!--<a href="#" onClick="ajaxLoadHtml('users','dashboardSubMenu')">Users</a> | <a-->
+			<!--href="#" onClick="ajaxLoadHtml('campaigns','dashboardSubMenu')">Campaigns</a> | <a-->
+			<!--href="#" onClick="ajaxLoadHtml('datarecords','dashboardSubMenu')">Datarecords</a>-->
+		<!--<br />-->
+		<!--<br />-->
+		<!--<div id="dashboardSubMenu"></div>-->
+	<!--</security:authorize>-->
+
+	<!--<br /> <br /> <br /> <br />-->
+	<!--<security:authorize access="isAuthenticated()">-->
+		<!--Admin Menu:-->
+					<!--<br />-->
+		<!--<br />-->
+<!--&lt;!&ndash; 		<a href="#" onClick="ajaxLoadHtml('users'),'dashboardAdminMenu'">Users</a> | <a &ndash;&gt;-->
+<!--&lt;!&ndash; 			href="#" onClick="ajaxLoadHtml('campaigns'),'dashboardAdminMenu'">Campaigns</a> | <a &ndash;&gt;-->
+<!--&lt;!&ndash; 			href="#" onClick="ajaxLoadHtml('datarecords'),'dashboardAdminMenu'">Datarecords</a> &ndash;&gt;-->
+		<!--<br />-->
+		<!--<br />-->
+		<!--<div id="dashboardAdminMenu"></div>-->
+	<!--</security:authorize>-->
+
+
+	<!--<security:authorize access="hasRole('ROLE_ANONYMOUS')">-->
+		<!--<script type="text/javascript">-->
+			<!--ajaxLoadWidget('login')-->
+		<!--</script>-->
+		<!--<a href="#" onClick="ajaxLoadWidget('signup/index')">Sign Up</a> | -->
+<!--&lt;!&ndash; 		<a href="#" &ndash;&gt;-->
+		<!--&lt;!&ndash; 			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#" &ndash;&gt;-->
+		<!--&lt;!&ndash; 			onClick="ajaxLoadHtml('datarecords')">Datarecords</a> &ndash;&gt;-->
+		<!--<br />-->
+		<!--<br />-->
+		<!--<div id="dashboardSubMenu"></div>-->
+
+	<!--</security:authorize>-->
+
+
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" items="${websites}" z="jjYa4HwBap2kpxcaXUbBI0pHrIA=">
+        <table:table data="${websites}" enableOnclickSessionSet="true" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" onClickAction="ajaxSetSessionAttribute" onClickParams="'website','mainWidget'" path="/websites" z="user-managed">
+            <table:column id="4" label="Domain Name" property="domainName" z="w+NqbSelBwsD1IxiWMnE6rZJ6U4="/>
+            <!--<table:column calendar="true" dateTimePattern="${website_datelastsentemail_date_format}" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" property="dateLastSentEmail" z="r+XOnXAQxoOU0Zo3rzy9v25Vnkg="/>-->
+            <!--<table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" property="emailAddressLastSentTo" z="Z5q1Fr6vFm5sxlS5KgxoSV0j2X4="/>-->
+            <!--<table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" property="emailPrimary" z="EEwPckJDoH7TSL9B1YPLzgodI1o="/>-->
+            <!--<table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" property="websiteEmailSendStatus" z="CZOwE5YENCF2Z4sAyfiUQRxCr6E="/>-->
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" property="domainName" z="w+NqbSelBwsD1IxiWMnE6rZJ6U4="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" property="contactName" z="HdmVZpi5eAik7mAdpR2XAQiDRcI="/>
+            <table:column calendar="true" dateTimePattern="${website_datelastsentemail_date_format}" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" property="dateLastSentEmail" z="r+XOnXAQxoOU0Zo3rzy9v25Vnkg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" property="emailAddressLastSentTo" z="Z5q1Fr6vFm5sxlS5KgxoSV0j2X4="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" property="emailPrimary" z="EEwPckJDoH7TSL9B1YPLzgodI1o="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" property="websiteEmailSendStatus" z="CZOwE5YENCF2Z4sAyfiUQRxCr6E="/>
+        </table:table>
+    </page:list>
+</div>

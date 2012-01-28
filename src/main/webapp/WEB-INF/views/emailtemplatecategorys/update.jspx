@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory" modelAttribute="emailTemplateCategory" path="/emailtemplatecategorys" versionField="Version" z="t8rVgBgBR0msPA2HNfEczHHrlS0=">
+        <field:input field="name" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_name" z="zC4vL3lYeT1H6XsXgh+VK2Etp4Y="/>
+        <field:select field="emailTemplateStatus" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_emailTemplateStatus" items="${emailtemplatestatuses}" path="emailtemplatestatuses" z="c7OPjFuvt9jia0CQ9E2rKoiAMF4="/>
+        <field:select field="users" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_users" itemValue="id" items="${users}" multiple="true" path="/users" z="9C0rOI/n9ecluPN8B4UKeGToQP0="/>
+    </form:update>
+</div>

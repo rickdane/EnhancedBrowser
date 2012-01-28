@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail" items="${receivedemails}" z="D81OH16Fn8iJKRxL/TWKdBqBqGM=">
+        <table:table data="${receivedemails}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail" path="/receivedemails" z="cwWt2opaHzfyay1iwTfznQAAW5w=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_fromAddress" property="fromAddress" z="vD9ZTbxh080jW5FBEv7dX4Y6+L4="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_toAddress" property="toAddress" z="4Oz3Atwg1cL4a0zKFO/foPAlcrU="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_subject" property="subject" z="/u22KA2QapRRJbqKt0/i5P+gSIM="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_content" property="content" z="2EoTxelzL1Es4CNsIaJcXgJIb4w="/>
+        </table:table>
+    </page:list>
+</div>

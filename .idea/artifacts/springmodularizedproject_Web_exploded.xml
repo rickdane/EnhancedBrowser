@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="springmodularizedproject:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/springmodularizedproject_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="springmodularizedproject/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springmodularizedproject" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="'springmodularizedproject' JPA descriptors.jar">
+            <element id="jpa-descriptors" facet="springmodularizedproject/jpa/JPA" />
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

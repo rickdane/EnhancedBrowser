@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" modelAttribute="website" path="/websites" render="${empty dependencies}" z="ixeJ8ljfVxY4cKAQBgVOMDhhTMY=">
+        <field:input field="domainName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" required="true" z="sSqEWZ5eYYR4ip1sQ63L0AQFkSs="/>
+        <field:input field="contactName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" z="q7DZrrRi/zzDQEKrErWYhcqnfTM="/>
+        <!--<field:datetime dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" z="xAKPGphbeJp2Fh1tgtcKOzVtkvY="/>-->
+        <!--<field:input field="emailTemplateCategories" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailTemplateCategories" z="yTWFYzmuTHIBIjzaoX/XNJzw3KU="/>-->
+        <field:select field="type" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_type" items="${websitetypes}" path="websitetypes" required="true" z="w3KlWFsBRRJJBvrGMC8NTNjI4bw="/>
+        <field:datetime dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" z="xAKPGphbeJp2Fh1tgtcKOzVtkvY="/>
+        <field:input field="emailAddressLastSentTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" z="ecjuo1RVPRL2i58gqFalAz04d/k="/>
+        <field:input field="emailPrimary" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" z="aJf0sly99On4D3kAjwhXeUcfdvc="/>
+        <field:select field="websiteEmailSendStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" items="${websiteemailsendstatuses}" path="websiteemailsendstatuses" z="rH6zyki/49B1407fM1xGr6GBsb8="/>
+        <field:input field="userOwner" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" z="Q4u0CgCKhKzEXsHXb+lH0PLEYcU="/>
+        <field:input field="emailTemplateCategories" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailTemplateCategories" z="yTWFYzmuTHIBIjzaoX/XNJzw3KU="/>
+        <field:input field="campaign" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_campaign" z="ytHsUbDJSHBuqdGHoSz0OBsYEDc="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" render="${not empty dependencies}" z="U4FP6fmNvQkzGufd31S/PaP+CEU="/>
+</div>

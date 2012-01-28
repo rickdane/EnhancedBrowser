@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rickdane_springmodularizedproject_domain_User" object="${user}" path="/users" z="KlPAU95Nj1bFsXsth9Ytb7QdwbA=">
+        <field:display field="firstName" id="s_com_rickdane_springmodularizedproject_domain_User_firstName" object="${user}" z="UtM05V51tydD5Uwooj6PX0o/ilg="/>
+        <field:display field="lastName" id="s_com_rickdane_springmodularizedproject_domain_User_lastName" object="${user}" z="QTlImgT9fDs31o2SYdH1LD1Snog="/>
+        <field:display field="emailAddress" id="s_com_rickdane_springmodularizedproject_domain_User_emailAddress" object="${user}" z="PHrh5LcK3s3kyAKVUw3aeP81XHk="/>
+        <field:display field="password" id="s_com_rickdane_springmodularizedproject_domain_User_password" object="${user}" z="Mx7xyj5rEC7GamoY+iyPtha93hQ="/>
+        <field:display date="true" dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="s_com_rickdane_springmodularizedproject_domain_User_activationDate" object="${user}" z="wpYbNqpvUWc27wS2H45zszU+hqI="/>
+        <field:display field="activationKey" id="s_com_rickdane_springmodularizedproject_domain_User_activationKey" object="${user}" z="u+XbSFirbQ0GCvDsG3A+Dw5bbP4="/>
+        <field:display field="enabled" id="s_com_rickdane_springmodularizedproject_domain_User_enabled" object="${user}" z="crtsHc+XQ7AMQSj1HHsGGCcXySs="/>
+        <field:display field="locked" id="s_com_rickdane_springmodularizedproject_domain_User_locked" object="${user}" z="5apabPDNb+mEFcjN7xyI/Ol5GXE="/>
+    </page:show>
+</div>

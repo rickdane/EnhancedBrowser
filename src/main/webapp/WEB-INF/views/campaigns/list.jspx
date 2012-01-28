@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" items="${campaigns}" z="zoccCiYReoSTaKkqwHR+Hpe2QAE=">
+        <table:table data="${campaigns}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" path="/campaigns" z="DIvPGSXgEQGOLDjpprpH98xwL0U=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_name" property="name" z="zbLteKPUlPVpF4xN/AvLiBUZJdc="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" property="datarecords" z="26TacFVLhzGNBJtHetg3qslpRHc="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" property="campaignEmailScrapeOptions" z="IHl5IpxQU0/8w5kI84DFRrdpdEQ="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_emailTemplateCategories" property="emailTemplateCategories" z="kYlIhjE9v1DzuWlCAwf3GNgArac="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignType" property="campaignType" z="dAHq6DmG+ZyBL+/xbihWP50gsAg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaign" property="campaign" z="aJ6u/wEFNTzxaNW1nW6psKFmw70="/>
+        </table:table>
+    </page:list>
+</div>

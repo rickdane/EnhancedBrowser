@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata" items="${rawscrapeddatas}" z="kc9OfuLaxlpELLtmvz8vb4MNoD4=">
+        <table:table data="${rawscrapeddatas}" id="l_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata" path="rawscrapeddatas" z="user-managed">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_url" property="url" z="SrET4ePd5qmh4D6Vcb9nSN/8LCY="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_emailAddress" property="emailAddress" z="NypCDJKJlT0JwlRyC+7lEzCu1lY="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_text" property="text" z="4HnyD30bBLwQHP+ofs5Hjv4HkwE="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddatamigrationstatus" property="rawscrapeddatamigrationstatus" z="fNwNmdEsndCf1SDFNju8tL0ybwc="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_fkScraperId" property="fkScraperId" z="g9XDaVES7fWbpd4JxqbdPfLQK34="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddataEmailScrapeAttempted" property="rawscrapeddataEmailScrapeAttempted" z="Q+kC5EBD/lh9EAPnyBhE9emIvfE="/>
+        </table:table>
+    </page:list>
+</div>

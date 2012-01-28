@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" items="${scrapers}" z="r4xuZ8eHnSibC2xpZX/4ti4itR0=">
+        <table:table data="${scrapers}" id="l_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" path="/scrapers" z="HtYxcfk6vI5Wixi/7VwoBELTV6g=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" property="name" z="CfaeqDgfA+dudjC9yn3bB8SwzB4="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPrefix" property="urlPrefix" z="Bu3SXao70M7S+8D1hl3BesqH/Cg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPostfix" property="urlPostfix" z="4cIgzhisCZBNKjKKh7visCJ5RFA="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" property="pageIncrementAmnt" z="crA52x1Kvw+XqFiUXjcn8GMuog0="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" property="keyword" z="O76enNEdPNY1vfMz0m3GEgMWhLE="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" property="baseDomainName" z="971A/vWuZLmsF5WHQwQwsxDhmzk="/>
+        </table:table>
+    </page:list>
+</div>

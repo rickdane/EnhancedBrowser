@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" modelAttribute="url" path="/urls" render="${empty dependencies}" z="nGyHALQKarJcrsAWwzfnuT2EOMA=">
+        <field:input field="url" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_url" z="yqpr10infTH6wiiJA7f3D9reU+g="/>
+        <field:input field="campaign" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_campaign" required="true" z="7tWx50FoseLIK9J7YpM79+TJK70="/>
+        <field:input field="website" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_website" required="true" z="DVNMu597eM5AmqT78biTmV+by2g="/>
+        <field:select field="urlStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_urlStatus" items="${urlstatuses}" path="urlstatuses" required="true" z="XL28xUar2qQwiS+tlfsbLRI4GoQ="/>
+        <field:datetime dateTimePattern="${url_datelastpostedto_date_format}" field="dateLastPostedTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_dateLastPostedTo" z="9sJ9NVN3K8Z+yW4cnk2TC2LwBiI="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" render="${not empty dependencies}" z="Z++irgHyCFJgxxZTnJbTLHlLFtE="/>
+</div>

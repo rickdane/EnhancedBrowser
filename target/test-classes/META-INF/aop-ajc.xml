@@ -1,0 +1,17 @@
+<aspectj>
+<aspects>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserRoleIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserRoleIntegrationTest_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserRoleDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.RoleDataOnDemand_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.RoleIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserIntegrationTest_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserDataOnDemand_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.RoleIntegrationTest_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.RoleDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.rickdane.springmodularizedproject.domain.UserRoleDataOnDemand_Roo_Configurable"/>
+</aspects>
+</aspectj>
+

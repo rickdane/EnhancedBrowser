@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" items="${emailaddresses}" z="lRgWD3Fnqup7XSL/6Dbp2zuESFI=">
+        <table:table data="${emailaddresses}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" path="/emailaddresses" z="pniIgQ6Rd0KDKYq1ME2lX/DxMgc=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" property="email" z="OWKgtQiqa2DPhzrTAvhwiFBQyZg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" property="website" z="QkcigDcm0kNDaweAhDKtgU7v+Qg="/>
+            <table:column calendar="true" dateTimePattern="${emailaddress_datelastsent_date_format}" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_dateLastSent" property="dateLastSent" z="VF/l1XtciPsKypk950leE/DXnPk="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_activeStatus" property="activeStatus" z="g7pbunM4jGko5asT7LX02kPqbkA="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="ajaxComponent" name="campaigns/list">
+        <put-attribute name="body" value="/WEB-INF/views/campaigns/list.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="campaigns/show">
+        <put-attribute name="body" value="/WEB-INF/views/campaigns/show.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="campaigns/create">
+        <put-attribute name="body" value="/WEB-INF/views/campaigns/create.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="campaigns/update">
+        <put-attribute name="body" value="/WEB-INF/views/campaigns/update.jspx"/>
+    </definition>
+    <definition extends="ajaxComponent" name="campaigns/selectForSession">
+        <put-attribute name="body" value="/WEB-INF/views/campaigns/selectForSession.jspx"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:ajax="urn:jsptagdir:/WEB-INF/tags/ajax"
+     xmlns:tiles="http://tiles.apache.org/tags-tiles"
+     id="enhancedBrowser_wrapper"
+     xmlns:security="http://www.springframework.org/security/tags"
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+
+</div>

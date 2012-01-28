@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:ajax="urn:jsptagdir:/WEB-INF/tags/ajax" id="ajaxGetSelfLoader"
+     xmlns:security="http://www.springframework.org/security/tags"
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <ajax:ajaxGetSelfLoader id="_ajaxGetSelfLoader"
+                            z="nZaf43BjUg1iM0v70HJVEsXDopc=" endPoint="appusers"
+                            divTarget="mainWidget">
+
+    </ajax:ajaxGetSelfLoader>
+
+
+    <div id="mainWidget">placeholder</div>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+        });
+
+        divMain = "mainWidget"
+
+
+        formId_paths = new Array()
+
+        function registerSubmitListener(formId, path) {
+
+            formId_paths[formId] = path;
+
+            $('#' + formId).submit(function () {
+                ajaxFormSubmit(formId_paths[formId], formId)
+
+                //must return false in order to cancel the default action which is to refresh the page
+                return false;
+            });
+        }
+
+
+        function ajaxLoadWidget(endpoint, targetDivInpt) {
+            var targetDiv = divMain
+            if (targetDivInpt != null) {
+                targetDiv = targetDivInpt
+            }
+            $.get(
+                    endpoint,
+                    "{key:value}",
+                    function (data) {
+                        $('#' + targetDiv).html(data);
+
+                    },
+                    "html"
+            );
+        }
+
+        function ajaxSetSessionAttribute(parameterName, callbackTargetDiv, value) {
+
+            var sessionEndpoint = "/springmodularizedproject/sessionvalues/" + parameterName + "/" + value
+            $.get(
+                    sessionEndpoint,
+                    "{key:value}",
+                    function (data) {
+                        if (callbackTargetDiv != null) {
+                            $("#" + callbackTargetDiv).html(data)
+                        }
+                    },
+                    "html"
+            );
+        }
+
+
+        function ajaxFormSubmit(endpoint, formId) {
+            var $form = $("#" + formId),
+                    $inputs = $form.find("input, select, button, textarea"),
+                    serializedData = $form.serialize();
+            $.post(endpoint,
+                    serializedData,
+                    function (data) {
+                        $("#" + divMain).html(data);
+                    },
+                    "html"
+            );
+        }
+
+
+        function ajaxLoadHtml(inputHtml, divTarget) {
+
+            users = '<a href="#" onClick="ajaxLoadWidget(\\'
+            appusers\\')">Show Users</a> | <a href="#" onClick="ajaxLoadWidget(\\'
+            appusers ? form\\')">Create New User</a>'
+            campaigns = '<a href="#" onClick="ajaxLoadWidget(\\'
+            campaigns ? form\\')">Create New Campaign</a> | <a href="#" onClick="ajaxLoadWidget(\\'
+            campaigns\\')">Manage Campaigns</a>'
+            datarecords = '<a href="#" onClick="ajaxLoadWidget(\\'
+            datarecords ? form\\')">Create New Data Record</a> | <a href="#" onClick="ajaxLoadWidget(\\'
+            datarecords\\')">Manage Data Records</a>'
+
+
+            if (inputHtml == "users") {
+                $('#' + divTarget).html(users);
+                $('#' + divMain).html("User Management Dashboard");
+            }
+            if (inputHtml == "campaigns") {
+                $('#' + divTarget).html(campaigns);
+                $('#' + divMain).html("Campaign Management Dashboard");
+            }
+            if (inputHtml == "datarecords") {
+                $('#' + divTarget).html(datarecords);
+                $('#' + divMain).html("Data Record Management Dashboard");
+            }
+
+        }
+    </script>
+
+
+</div>

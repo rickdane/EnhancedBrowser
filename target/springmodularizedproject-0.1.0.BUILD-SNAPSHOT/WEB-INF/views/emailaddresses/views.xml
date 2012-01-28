@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="ajaxComponent" name="emailaddresses/list">
+        <put-attribute name="body" value="/WEB-INF/views/emailaddresses/list.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailaddresses/show">
+        <put-attribute name="body" value="/WEB-INF/views/emailaddresses/show.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailaddresses/create">
+        <put-attribute name="body" value="/WEB-INF/views/emailaddresses/create.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailaddresses/update">
+        <put-attribute name="body" value="/WEB-INF/views/emailaddresses/update.jspx"/>
+    </definition>
+    <definition extends="ajaxComponent" name="emailaddresses/findEmailaddressesByWebsite">
+        <put-attribute name="body" value="/WEB-INF/views/emailaddresses/findEmailaddressesByWebsite.jspx"/>
+    </definition>
+</tiles-definitions>

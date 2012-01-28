@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail" object="${receivedemail}" path="/receivedemails" z="PuJcq7Xs+dH9WZLgF4AkmMPno2s=">
+        <field:display field="fromAddress" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_fromAddress" object="${receivedemail}" z="lX5wG6OJcKne0OHx1fXF9IImgVs="/>
+        <field:display field="toAddress" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_toAddress" object="${receivedemail}" z="3vECJDxpRbWkUp+rLn+WjMIq9CQ="/>
+        <field:display field="subject" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_subject" object="${receivedemail}" z="rO/Y8FqY0bIPYEQyyRGMxnsEVAo="/>
+        <field:display field="content" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_ReceivedEmail_content" object="${receivedemail}" z="rldgQC0RTCoDXEKzakFrG2yELE0="/>
+    </page:show>
+</div>

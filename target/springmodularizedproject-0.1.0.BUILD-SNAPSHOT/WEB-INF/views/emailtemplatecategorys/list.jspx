@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory" items="${emailtemplatecategorys}" z="tg+DmXTNzi2H3lkVz9rNjxCS5rk=">
+        <table:table data="${emailtemplatecategorys}" id="l_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory" path="/emailtemplatecategorys" z="/5tVqXuNQkGMFSlm3ZGJtkLWASo=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_name" property="name" z="LdSBhfBABHgSNDqSXmOOxwcXx5E="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_emailTemplateStatus" property="emailTemplateStatus" z="g489rqK3EUkhwZbF9Kt1NWvzlXk="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateCategory_users" property="users" z="oQ3XPu2Sr/L5r0M9T2ZP/tR5YO4="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu"
+     xmlns:security="http://www.springframework.org/security/tags" id="menu" version="2.0">
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <security:authorize access="hasRole('ROLE_ADMIN')">
+        <menu:menu id="_menuAdmin" z="user-managed">
+            <menu:category label="Admin Menu" id="c_userrole" z="C4C1ZBdes4PUIjEM3Ajwwhn1EwA=">
+                <menu:item id="i_userrole_new" messageCode="global_menu_new" url="/userroles?form"
+                           z="qYpuuJuPupoYjD8LM0ISnxylj4o="/>
+                <menu:item id="i_userrole_list" messageCode="global_menu_list"
+                           url="/userroles?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                           z="fTjcT4INZTypLgu+ZHmwzE55ORs="/>
+                <menu:item id="i_role_new" messageCode="global_menu_new" url="/roles?form"
+                           z="WNB2HvnzvtbOA3r7qL1gqrUOq8g="/>
+                <menu:item id="i_role_list" messageCode="global_menu_list"
+                           url="/roles?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                           z="DVFtqj4xcHbEiJh6bgI7Tyre3ec="/>
+                <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form"
+                           z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
+                <menu:item id="i_user_list" messageCode="global_menu_list"
+                           url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                           z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
+
+            </menu:category>
+
+        </menu:menu>
+    </security:authorize>
+
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" modelAttribute="scraper" path="/scrapers" versionField="Version" z="cXJXO3di+MVT7NSksqWRbkV4Dr4=">
+        <field:input field="name" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" z="1guwWBABtr+Wpdlny828K+u47cg="/>
+        <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="pd0BiGH4TCTL9XbXx3xLV0vF/Ck="/>
+        <field:select field="status" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" items="${processstatuses}" path="processstatuses" z="tjPsBq2YelxT/SgOqpyl6ED1xlQ="/>
+        <field:input field="type" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" z="EYVlO5BoU1oZ7nDZ/QM3SoOUxZY="/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" itemValue="id" items="${campaigns}" path="/campaigns" z="/5llCBOLbRFJGHG1h5SvctPcN1Y="/>
+        <field:input field="fkCampaignId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" z="EefhdmFsVn8zy7u/7K2xUk6zORA="/>
+        <field:input field="urlPrefix" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPrefix" z="mv3rJyQ/5w+GcV7SOdblRsEQpDw="/>
+        <field:input field="urlPostfix" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPostfix" z="h2QUqmOw4T80u8qAegVWlluVn4M="/>
+        <field:input field="pageIncrementAmnt" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" z="TrKHHqBEiUU0U3NSKmQdmLHrsJg="/>
+        <field:input field="keyword" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" z="xfJ6Y6ZT7w+SCJwfxP9U2ctzboM="/>
+        <field:input field="baseDomainName" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" z="9+6K2nMDMxrT9JNa8vye9FT07ug="/>
+        <field:input field="javaScriptLinkIdentifier" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_javaScriptLinkIdentifier" z="9ksCF45r6pOiCTC/vf1qbr51QM0="/>
+    </form:update>
+</div>

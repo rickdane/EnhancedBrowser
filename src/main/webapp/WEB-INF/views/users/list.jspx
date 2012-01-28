@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_domain_User" items="${users}" z="6rs63zSsliYKrdyWjwQD2E6QslU=">
+        <table:table data="${users}" id="l_com_rickdane_springmodularizedproject_domain_User" path="/users" z="O4JOfLCseaD17zP7ArqPdLoTOf4=">
+            <table:column id="c_com_rickdane_springmodularizedproject_domain_User_firstName" property="firstName" z="H71oMblVczjpQ7PqcpePlRjd110="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_domain_User_lastName" property="lastName" z="dwDSsUF/lhpznHXbqlvFq8ej9zs="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_domain_User_emailAddress" property="emailAddress" z="DA2t56ctkou/Mk6VUCwxOYJxH6s="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_domain_User_password" property="password" z="8qv0tfHka0WzSa4MKeznezAc8iw="/>
+            <table:column date="true" dateTimePattern="${user_activationdate_date_format}" id="c_com_rickdane_springmodularizedproject_domain_User_activationDate" property="activationDate" z="HKTurDIp3B2zd2sxed28FfYlRxg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_domain_User_activationKey" property="activationKey" z="AFdld31Ru7Spv83wY9T2Q+0c3QA="/>
+        </table:table>
+    </page:list>
+</div>

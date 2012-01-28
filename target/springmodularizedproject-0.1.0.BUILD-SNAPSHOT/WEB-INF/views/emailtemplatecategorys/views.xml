@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="ajaxComponent" name="emailtemplatecategorys/list">
+        <put-attribute name="body" value="/WEB-INF/views/emailtemplatecategorys/list.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailtemplatecategorys/show">
+        <put-attribute name="body" value="/WEB-INF/views/emailtemplatecategorys/show.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailtemplatecategorys/create">
+        <put-attribute name="body" value="/WEB-INF/views/emailtemplatecategorys/create.jspx"/>
+    </definition>
+<definition extends="ajaxComponent" name="emailtemplatecategorys/update">
+        <put-attribute name="body" value="/WEB-INF/views/emailtemplatecategorys/update.jspx"/>
+    </definition>
+</tiles-definitions>

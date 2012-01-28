@@ -1,0 +1,44 @@
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-01 14:48:54
+
+// project --topLevelPackage com.rickdane.SpringModularizedProject
+// jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+// entity jpa --class ~.module.webgatherer.domain.scraper
+
+json all --deepSerialize
+// web mvc setup
+web mvc json all --package ~.module.webgatherer.web
+web mvc all --package ~.module.webgatherer.web
+// perform eclipse
+
+entity jpa --class ~.module.consumabledata.domain.datarecord
+entity jpa --class ~.module.consumabledata.domain.Campaign
+
+
+
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
+
+
+focus --class ~.module.webgatherer.domain.Scraper
+field string --fieldName name
+
+
+focus --class ~.module.consumabledata.domain.Campaign
+field string --fieldName name
+field set --fieldName datarecords --type ~.module.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
+
+
+
+json all --deepSerialize
+
+
+
+web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.webgatherer.web
+
+web mvc json all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.webgatherer.web
+
+
+
+

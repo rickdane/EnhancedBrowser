@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu"
+     xmlns:security="http://www.springframework.org/security/tags" id="menu" version="2.0">
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <menu:menu id="_menuWebGatherer" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category label="Web Gatherer Menu"  id="c_scraper" z="0phro3VhawS7O5Xywt4nhyeIFkA=">
+            <menu:item id="i_scraper_new" messageCode="global_menu_new" url="/scrapers?form"
+                       z="MQHC7VHcTZEYbKVIRcpZ9vDxIso="/>
+            <menu:item id="i_scraper_list" messageCode="global_menu_list"
+                       url="/scrapers?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="r8TMkIjUKz022jlWCnI9IaN8oFU="/>
+            <menu:item id="i_campaign_new" messageCode="global_menu_new" url="/campaigns?form"
+                       z="XGW4oMwJvrJL6Hs7pn+9Hru6fao="/>
+            <menu:item id="i_campaign_list" messageCode="global_menu_list"
+                       url="/campaigns?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="slEVxjLLhMTf81k15jhOxzTRR0M="/>
+            <menu:item id="i_rawscrapeddata_new" messageCode="global_menu_new" url="/rawscrapeddatas?form"
+                       z="br3sTZ4euOfBiG0U7rjL9VTAFDU="/>
+            <menu:item id="i_rawscrapeddata_list" messageCode="global_menu_list"
+                       url="/rawscrapeddatas?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="VTQHW7ufcppYcKAQfGs5ufMREjY="/>
+            <menu:item id="i_rawscrapeddata_migrateform" messageCode="rawscrapeddata_migrate"
+                       url="/rawscrapeddatas?migrateForm" z="user-managed"/>
+
+
+        </menu:category>
+    </menu:menu>
+
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_consumabledata_domain_Datarecord" modelAttribute="datarecord" path="/datarecords" versionField="Version" z="rXO69PYbHnwcX2hwnM+o5OVtFn4=">
+        <field:input field="entry" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Datarecord_entry" z="4YCRPv8hekqCcLLTye7IVNwvsFY="/>
+    </form:update>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" object="${url}" path="/urls" z="3pXanByUkxXXJv1YDILSYEug4ug=">
+        <field:display field="url" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_url" object="${url}" z="DlDeW+hCaBecXJHd8C2sVROCHk4="/>
+        <field:display field="campaign" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_campaign" object="${url}" z="yAnKjN6Ke6XaS683AlApcLJu+CQ="/>
+        <field:display field="website" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_website" object="${url}" z="pUusE+DVeyHlWrDyFw9sScP/LaQ="/>
+        <field:display field="urlStatus" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_urlStatus" object="${url}" z="1P8Gy4/udTGUsOywSwjSK5n8zqY="/>
+        <field:display calendar="true" dateTimePattern="${url_datelastpostedto_date_format}" field="dateLastPostedTo" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_dateLastPostedTo" object="${url}" z="JDrhFJSq3jgdNjRBDDF+4MmGC7E="/>
+    </page:show>
+</div>

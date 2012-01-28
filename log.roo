@@ -1,0 +1,274 @@
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 18:50:47
+project --topLevelPackage com.rickdane.SpringModularizedProject
+jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+entity jpa --class ~.module.webgatherer.domain.scraper
+jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+web mvc setup
+web mvc json all --package ~.module.webgatherer.web
+entity jpa --class ~.module.webgatherer.domain.scraper
+json all --deepSerialize
+web mvc json all --package ~.module.webgatherer.web
+web mvc all --package ~.module.webgatherer.web
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 18:53:29
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-07 18:53:38
+entity --class ~.domain.User --testAutomatically --permitReservedWords
+field string --fieldName firstName --sizeMin 1 --notNull
+field string --fieldName lastName --sizeMin 1 --notNull
+field string --fieldName emailAddress --sizeMin 1 --notNull --unique
+field string --fieldName password --sizeMin 1 --notNull
+field date --fieldName activationDate --type java.util.Date 
+field string --fieldName activationKey 
+field boolean --fieldName enabled 
+field boolean --fieldName locked 
+entity --class ~.domain.Role --testAutomatically --permitReservedWords
+field string --fieldName roleName --sizeMin 1 --notNull --unique
+field string --fieldName roleDescription --sizeMin --sizeMax 200 --notNull
+entity --class ~.domain.UserRole --testAutomatically
+field reference --fieldName userEntry --type ~.domain.User --notNull
+field reference --fieldName roleEntry --type ~.domain.Role --notNull
+finder add findUsersByEmailAddress --class ~.domain.User
+finder add findUsersByActivationKeyAndEmailAddress --class ~.domain.User
+finder add findUserRolesByUserEntry --class ~.domain.UserRole
+controller scaffold --class ~.web.UserController --entity ~.domain.User
+controller scaffold --class ~.web.RoleController --entity ~.domain.Role
+controller scaffold --class ~.web.UserRoleController --entity ~.domain.UserRole
+security setup
+email sender setup --hostServer smtp.gmail.com --port 587 --protocol SMTP --username rohitsghatoltest@gmail.com --password password4me
+typicalsecurity setup
+quit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-07 18:55:09
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 19:00:26
+// [failed] entity jpa --class ~.module.domain.user
+entity jpa --class ~.module.consumabledata.domain.datarecord
+entity jpa --class ~.module.consumabledata.domain.Campaign
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
+focus --class ~.module.webgatherer.domain.Scraper
+field string --fieldName name
+focus --class ~.module.consumabledata.domain.Campaign
+field string --fieldName name
+field set --fieldName datarecords --type ~.module.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
+json all --deepSerialize
+web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.webgatherer.web
+web mvc json all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.webgatherer.web
+json add --class ~.api.transport.TransportBase
+json add --class ~.api.transport.TransportBase --deepserialize
+json add --class ~.api.transport.WebGathererJobJsonTransport --deepserialize
+field set --fieldName userOwner --type ~.domain.user --class ~.module.webgatherer.domain.scraper --cardinality MANY_TO_MANY
+field boolean --fieldName isProcessed 
+finder list --class ~.module.webgatherer.domain.Scraper 
+finder add --finderName findScrapersByIsProcessedNot
+finder add --finderName findScrapersByIsProcessedNotAndfindScrapersByUserOwner
+finder add --finderName findScrapersByUserOwner
+web mvc all --package ~.module.webgatherer.web
+
+perform eclipse
+focus --class ~.module.webgatherer.domain.Scraper
+field boolean --fieldName used --notNull
+finder list
+finder add --finderName findScrapersByUsedNot
+field enum --fieldName status --type ~.module.webgatherer.domain.ProcessStatus
+finder list
+finder add --finderName findScrapersByStatus
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 14:18:28
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 18:57:23
+entity jpa --class ~.module.scraper.domain.rawscrapeddata
+entity jpa --class ~.module.consumabledata.domain.website
+entity jpa --class ~.module.consumabledata.domain.emailaddress
+focus --class ~.module.consumabledata.domain.website
+field string domainName
+field string contactName
+field date --type java.util.Calendar dateLastSentEmail
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 20:31:42
+focus --class ~.module.consumabledata.domain.campaign
+// [failed] field string name
+// [failed] focus --class ~.module.scraper.domain.rawscrapeddata
+// [failed] field string url
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+field string url
+field string emailAddress
+field string text
+field set --fieldName campaign --type ~.module.domain.webgatherer.campaign --class ~.module.webgatherer.domain.rawscrapeddata --cardinality MANY_TO_MANY 
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-10 20:40:57
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 20:41:04
+perform eclipse
+web mvc all --package ~.module
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+finder add --finderName findEmailaddressesByWebsite
+web mvc all --package ~.module
+focus --class ~.module.webgatherer.domain.scraper
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 23:15:34
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 14:34:17
+// [failed] focus --class ~.domain.Rawscrapeddata
+// [failed] finder list
+// [failed] focus --class ~.module.domain.webgatherer.rawscrapeddata
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByMigrationStatus
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:27:46
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:27:52
+// [failed] focus --class ~.module.domain.wegatherer.rawscrapeddata
+// [failed] focus --class ~.module.domain.webgatherer.rawscrapeddata
+// [failed] focus --class module.webgatherer.domain.rawscrapeddata
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByMigrationStatusAndCampaign
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:44:38
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:44:45
+perform eclipse
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:51:09
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:53:31
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:54:58
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:55:04
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByEmailAddressLike
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:57:12
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByTextLikeAndEmailAddressNotEquals
+finder add --finderName findRawscrapeddatasByMigrationStatusAndCampaign
+finder list
+finder add --finderName findRawscrapeddatasByMigrationStatus
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 17:03:22
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatus
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 17:06:24
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddatamigrationstatus
+// [failed] finder list
+finder list
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 18:38:10
+focus --class ~.module.consumabledata.domain.campaign
+finder list
+finder add --finderName findCampaignsByNameEquals
+focus --class ~.module.consumabledata.domain.Website
+finder list
+finder add --finderName findWebsitesByDomainNameEquals
+focus --class ~.module.consumabledata.domain.Emailaddress
+finder list
+finder add --finderName findEmailaddressesByWebsite
+finder list
+json add
+json add --deepserialize
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-12 12:00:57
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+// [failed] focus --class ~.module.webgatherer.domain.campaign
+// [failed] focus --class ~.module.webgatherer.domain.campaign
+focus --class ~.module.consumabledata.domain.campaign
+finder list
+finder add --finderName findCampaignsByCampaignEmailScrapeOptions
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-12 13:47:30
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 02:17:33
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 03:02:03
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 09:36:26
+focus --class ~.module.consumabledata.domain.website
+finder list
+json add --deepserialize
+web mvc json add --jsonObject ~.module.consumabledata.domain.website
+// [failed] finder list
+finder list
+finder list
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+focus --class ~.module.consumabledata.domain.website
+finder list
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 14:18:12
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 17:49:56
+// [failed] focus --class ~.domain.EmailTemplateBody
+// [failed] focus --class ~.userdata.domain.EmailTemplateBody
+// [failed] focus --class ~.domain.Emailtemplatebody
+focus --class ~.module.userdata.domain.EmailTemplateBody
+// [failed] finder list
+// [failed] finder list
+// [failed] finder list
+// [failed] finder list
+finder list
+finder add findEmailTemplateBodysByEmailTemplateCategory
+focus --class ~.module.userdata.domain.EmailTemplateSubject
+finder add findEmailTemplateBodysByEmailTemplateCategory
+finder list
+finder add --finderName findEmailTemplateSubjectsByEmailTemplateCategory
+web mvc all --package ~.module.userdata.domain
+persistence setup --provider HIBERNATE --database MYSQL
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 22:56:30
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 22:57:10
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 23:26:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-14 12:11:28
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-14 12:55:15
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-14 13:33:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-15 10:59:17
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-15 15:32:06
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-15 15:32:13
+// [failed] focus --class ~.module.consumabledata.domain.receivedemail
+focus --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc json add --jsonObject ~.module.consumabledata.domain.ReceivedEmail
+// [failed] web mvc all --package ~.module.consumabledata.domain
+// [failed] web mvc controller --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc controller --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc all --package ~.module.consumabledata.domain
+web mvc controller ~.module.consumabledata.domain
+web mvc json all --package ~.module.consumabledata.domain.RetrievedEmail
+web mvc all --package ~.module.consumabledata.domain.web
+focus --class ~.module.consumabledata.domain.website
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-15 19:18:35
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-16 16:31:37
+persistence setup --provider HIBERNATE --database POSTGRES
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-16 19:30:07
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-16 19:43:13
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-16 23:30:45
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-17 20:14:46
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-17 21:26:10
+focus --class ~.module.consumabledata.domain.Emailaddress
+finder list
+finder add findEmailaddressesByEmailEquals
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-17 21:38:26
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-17 21:38:50
+perform eclipse
+perform eclipse
+perform eclipse
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-19 20:06:51
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-19 21:43:56
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-19 21:44:04
+perform eclipse
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-20 15:39:42
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-23 18:22:04
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-24 18:50:18
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-24 20:43:51
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 04:50:33
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 13:06:00
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-28 13:12:48
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 13:12:55

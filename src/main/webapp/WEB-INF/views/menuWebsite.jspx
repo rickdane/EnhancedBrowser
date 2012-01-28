@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu"
+     xmlns:security="http://www.springframework.org/security/tags" id="menu" version="2.0">
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <menu:menu id="_menuWebsite" z="user-managed">
+
+        <menu:category label="Website Management Menu"  id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
+            <menu:item targetDiv='sideFocusMenu' id="i_website_list" messageCode="global_menu_list"
+                       url="/websites?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="s8I1JDcQyV2Kk2zbhf1KRXcvLWs="/>
+
+            <menu:item id="i_website_new" messageCode="global_menu_new" url="/websites?form"
+                       z="TZZW+JWeOAGWfGyUM5qBHbSJLwc="/>
+
+            <menu:item id="i_emailaddress_new" messageCode="global_menu_new" url="/emailaddresses?form"
+                       z="o+0gfcb2Vw/pHfeAFUp8HxxgUD0="/>
+            <menu:item id="i_emailaddress_finder" messageCode="global_menu_new"
+                       url="/emailaddresses?findEmailaddressesByWebsite" z="user-managed"/>
+            <menu:item id="i_emailaddress_list" messageCode="global_menu_list"
+                       url="/emailaddresses?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="tEx66B/xo9bRju5cI9yGYUsCWz0="/>
+            <menu:item id="i_emailtemplatecategory_new" messageCode="global_menu_new" url="/emailtemplatecategorys?form"
+                       z="EyYKhne9MmtA6gtIiSIn0TIUrRA="/>
+            <menu:item id="i_emailtemplatecategory_list" messageCode="global_menu_list"
+                       url="/emailtemplatecategorys?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="Uyjt6UdzjhO05t6YE2ibjDcuQzk="/>
+            <menu:item id="i_emailtemplatebody_new" messageCode="global_menu_new" url="/emailtemplatebodys?form"
+                       z="htGXkORsfIqIh1W78A4G6xy8IUI="/>
+            <menu:item id="i_emailtemplatebody_list" messageCode="global_menu_list"
+                       url="/emailtemplatebodys?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="C4g2Td8BjpXeJcacls1x8TLqEFc="/>
+            <menu:item id="i_emailtemplatesubject_new" messageCode="global_menu_new" url="/emailtemplatesubjects?form"
+                       z="brd7knhSdDQ7d4D4vrnEnnk5lnY="/>
+            <menu:item id="i_emailtemplatesubject_list" messageCode="global_menu_list"
+                       url="/emailtemplatesubjects?page=1&amp;size=${empty param.size ? 10 : param.size}"
+                       z="Ca33czmckqKWUFUnnZPRBsZEAh8="/>
+            <menu:item id="i_receivedemail_new" messageCode="global_menu_new" url="/receivedemails?form" z="T+xzvE0GekxkAd2Y5xNOp7IFHX4="/>
+            <menu:item id="i_receivedemail_list" messageCode="global_menu_list" url="/receivedemails?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gLAvbN5/qd+nMSMihUFx+DIH4As="/>
+
+
+        </menu:category>
+
+    </menu:menu>
+</div>

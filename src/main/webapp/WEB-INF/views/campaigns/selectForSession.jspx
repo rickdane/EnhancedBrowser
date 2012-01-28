@@ -1,0 +1,19 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+     xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:noFormatting label="Select Campaign" id="d_com_rickdane_springmodularizedproject_module_consumbaledata_domain_Campaign"
+                 modelAttribute="campaign" path="/campaigns/select" render="${empty dependencies}"
+                 z="ZNGAuYQQ78PRmL2A/ddLP9YIB8A=">
+        <field:selectAjax label="Select Campaign" field="name"
+                          id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign"
+                          itemValue="id" items="${campaigns}" path="/campaigns" required="true"
+                          z="JL1cnXR4r9r/siYH84W09E9d4XE="/>
+    </form:noFormatting>
+
+    <form:dependency dependencies="${dependencies}"
+                     id="d_com_rickdane_springmodularizedproject_module_consumbaledata_Campaign"
+                     render="${not empty dependencies}" z="E16FQe3KSC0sXhQ1dtDRL+5k/1A="/>
+
+</div>

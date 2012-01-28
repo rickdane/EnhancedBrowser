@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_UrlBlockPattern" items="${urlblockpatterns}" z="z2iYqYPWczMAVc7WICsRaunXqEs=">
+        <table:table data="${urlblockpatterns}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_UrlBlockPattern" path="/urlblockpatterns" z="6oTdYIYeeFieSFnLjrsmyngKW9w=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_UrlBlockPattern_pattern" property="pattern" z="yGeneTbQv5BKE0JmRUUzk9SK0gM="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_UrlBlockPattern_campaign" property="campaign" z="G4tF9M7B4GmDbtztULKqbxF+Ox4="/>
+        </table:table>
+    </page:list>
+</div>
