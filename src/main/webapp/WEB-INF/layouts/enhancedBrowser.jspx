@@ -83,6 +83,21 @@
         );
     }
 
+    function changeUrlStatus(status) {
+
+        var endpoint = '/urls/updateCurStatus/' + status
+
+        $.get(
+                endpoint,
+                "{key:value}",
+                function (data) {
+                    //reload the url list
+                    ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE', 'urlListHolder')
+                },
+                "html"
+        );
+    }
+
     function ajaxSetSessionAttribute(parameterName, callbackTargetDiv, value) {
 
         var sessionEndpoint = appPrefix + "/sessionvalues/" + parameterName + "/" + value
@@ -153,7 +168,7 @@
                         return false
                     }
 
-                        $("#enhancedBrowser_sidebar").hide();
+                    $("#enhancedBrowser_sidebar").hide();
 
                 });
     });
@@ -205,16 +220,17 @@
     Update current site:
     <br/>
     <br/>
-    <a href="#" onclick=""> (P)</a> | <a href="#" onclick=""> (B) </a>
+    <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
+                                                                     onclick="changeUrlStatus('BLOCKED')"> (B) </a>
     <br/>
     <br/>
     <br/>
     <br/>
     <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE','urlListHolder')">- Show New</a>
     <br/>
-    <a href="#" onclick="">- Show Processed</a>
+    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/PROCESSED','urlListHolder')">- Show Processed</a>
     <br/>
-    <a href="#" onclick="">- Show Blocked</a>
+    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/BLOCKED','urlListHolder')">- Show Blocked</a>
     <br/>
 
     <br/>

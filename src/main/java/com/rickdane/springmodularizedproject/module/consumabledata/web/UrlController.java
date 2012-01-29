@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class UrlController {
 
         if (campaign != null) {
 
-            List <Url> urlList = Url.findUrlsByUrlStatusAndCampaign(urlStatus,campaign).getResultList();
+            List<Url> urlList = Url.findUrlsByUrlStatusAndCampaign(urlStatus, campaign).getResultList();
             uiModel.addAttribute("urls", urlList);
 
             addDateTimeFormatPatterns(uiModel);
@@ -49,7 +50,37 @@ public class UrlController {
 
         return "urls/list";
     }
-    
+
+    @RequestMapping(value = "/select/{id}", produces = "text/html")
+    public String sessionSelect(@PathVariable("id") Long id, Model uiModel, HttpSession session, HttpServletRequest httpServletRequest) {
+
+        SessionValues sessionValues = SessionManager.getSessionAttribute(session);
+
+        Url url = Url.findUrl(id);
+
+        sessionValues.setSelectedUrl(url);
+
+        return "token";
+    }
+
+    @RequestMapping(value = "/updateCurStatus/{status}", produces = "text/html")
+    public String sessionSelect(@PathVariable("status") String urlStatusStr, Model uiModel, HttpSession session, HttpServletRequest httpServletRequest) {
+
+        SessionValues sessionValues = SessionManager.getSessionAttribute(session);
+
+        UrlStatus urlStatus = UrlStatus.valueOf(urlStatusStr);
+
+        Url url = sessionValues.getSelectedUrl();
+
+        if (url != null) {
+            Url urlPers = Url.findUrl(url.getId());
+            urlPers.setUrlStatus(urlStatus);
+            urlPers.persist();
+        }
+
+        return "token";
+    }
+
     void addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("url_datelastpostedto_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }

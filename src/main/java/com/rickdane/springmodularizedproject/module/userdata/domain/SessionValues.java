@@ -18,8 +18,6 @@ public class SessionValues {
 
     private Website currentWebsite;
 
-    private User currentuser;
-
     private User selectedUser;
 
     private Campaign currentCampaign;
@@ -40,14 +38,6 @@ public class SessionValues {
 
     public void setSelectedUrl(Url selectedUrl) {
         this.selectedUrl = selectedUrl;
-    }
-
-    public User getCurrentuser() {
-        return currentuser;
-    }
-
-    public void setCurrentuser(User currentuser) {
-        this.currentuser = currentuser;
     }
 
     public User getSelectedUser() {
