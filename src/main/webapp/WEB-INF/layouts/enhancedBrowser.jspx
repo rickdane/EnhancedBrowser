@@ -130,6 +130,7 @@
     }
 
     $(document).ready(function () {
+
         $("#enhancedBrowser_sidebar").hide();
 
         $("div.enhancedBrowser_sidebarActivator").mouseenter(
