@@ -62,8 +62,10 @@
                 function (data) {
                     $('#' + targetDiv).html(data);
 
-                    dynamicBindCallback();
                     urlTableLoadCallback()
+
+                    //manually select from list (figure out how to genericize this)
+                    registerWithSideMenuSelect("#selectform")
                 },
                 "html"
         );
@@ -110,6 +112,23 @@
         );
     }
 
+
+    function registerWithSideMenu(elementId) {
+        $(elementId).mouseenter(
+                function () {
+
+                });
+    }
+
+    function registerWithSideMenuSelect(elementId) {
+        $(elementId).mouseenter(
+                function () {
+                    lastClickedIsSelectMenu = true;
+
+                    clickCampaignSelectList()
+                });
+    }
+
     $(document).ready(function () {
         $("#enhancedBrowser_sidebar").hide();
 
@@ -118,41 +137,34 @@
                     $("#enhancedBrowser_sidebar").show();
                 });
 
-        $("div.enhancedBrowser_sidebar").mouseenter(
-                function () {
-                    enhancedBrowser_sidebar_Activated = true;
-                });
 
+        registerWithSideMenu("div.enhancedBrowser_sidebar")
 
         ajaxLoadWidget("/campaigns/selectForSession", "campaignSelectAjax")
 
+        lastClickedIsSelectMenu = false
 
-//
-//            $("div.enhancedBrowser_sidebar").mouseleave(
-//                    function () {
-//                        if (enhancedBrowser_sidebar_Activated) {
-//                            $("#enhancedBrowser_sidebar").hide();
-//                        }
-//                        enhancedBrowser_sidebar_Activated = false;
-//
-//                    });
-
-
-    });
-
-    //selects data from drop-down menu dynamically
-    function dynamicBindCallback() {
-        $(".selectList").click(
+        $("#enhancedBrowser_sidebar").mouseleave(
                 function () {
 
-                    //TODO: need to generalize this, not hard-code it
-                    var path = appPrefix + "/campaigns/select/"
+                    if (lastClickedIsSelectMenu) {
+                        lastClickedIsSelectMenu = false
+                        return false
+                    }
 
-                    var selectedValue = $("#selectform").val()
-
-                    ajaxGetNoCallback(path + selectedValue)
+                        $("#enhancedBrowser_sidebar").hide();
 
                 });
+    });
+
+
+    function clickCampaignSelectList() {
+        //TODO: need to generalize this, not hard-code it
+        var path = appPrefix + "/campaigns/select/"
+
+        var selectedValue = $("#selectform").val()
+
+        ajaxGetNoCallback(path + selectedValue)
     }
 
     function urlTableLoadCallback() {
@@ -229,7 +241,6 @@
     <iframe src='http://digg.com' id='iframeMain' width="100%" height="100%">
 
     </iframe>
-
 
 </div>
 

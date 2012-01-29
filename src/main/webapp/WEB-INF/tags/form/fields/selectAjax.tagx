@@ -57,7 +57,7 @@
         </c:set>
 
 
-        <form:select class="selectList" id="selectform" items="${items}" path="${sec_field}"
+        <form:select class="enhancedBrowser_sidebar" id="selectform" items="${items}" path="${sec_field}"
 
                      itemValue="${fn:escapeXml(itemValue)}">
 

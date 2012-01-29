@@ -56,7 +56,7 @@
                     <c:when test="${multiple}">
                       <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
                       <c:forEach items="${items}" var="item">
-                        <option value="${item}">
+                        <option class="selectOption" value="${item}">
                         <c:choose>
                           <c:when test="${empty itemLabel}">
                             <spring:eval expression="item" />
@@ -72,7 +72,7 @@
                     <c:otherwise>
                       <select id="_${sec_field}_id" name="${sec_field}">
                       <c:forEach items="${items}" var="item">
-                        <option value="${item}">
+                        <option class="selectOption" value="${item}">
                         <c:choose>
                           <c:when test="${empty itemLabel}">
                             <spring:eval expression="item" />
@@ -122,7 +122,7 @@
                     <c:when test="${multiple}">
                       <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
                         <c:forEach items="${items}" var="item">
-                          <option value="${item[fn:escapeXml(itemValue)]}">
+                          <option class="selectOption" value="${item[fn:escapeXml(itemValue)]}">
                             <c:choose>
                               <c:when test="${empty itemLabel}">
                                 <spring:eval expression="item" />
@@ -138,7 +138,7 @@
                     <c:otherwise>
                       <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
                         <c:forEach items="${items}" var="item">
-                          <option value="${item[fn:escapeXml(itemValue)]}">
+                          <option class="selectOption" value="${item[fn:escapeXml(itemValue)]}">
                             <c:choose>
                               <c:when test="${empty itemLabel}">
                                 <spring:eval expression="item" />
@@ -184,7 +184,7 @@
           </c:choose>
           <c:choose>
             <c:when test="${multiple == false}">
-              <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${sec_field}_id', widgetType: 'dijit.form.FilteringSelect', widgetAttrs : {hasDownArrow : true}})); </script>
+
             </c:when>
             <!-- disabled due to http://jira.springframework.org/browse/ROO-909 <c:otherwise> <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${field}_id', widgetType: 'dijit.form.MultiSelect', widgetAttrs : {}})); </script> </c:otherwise> -->
           </c:choose>
