@@ -93,10 +93,8 @@ public class RawscrapeddataController {
         TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(Rawscrapeddatamigrationstatus.NOT_MIGRATED, RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
         List<Rawscrapeddata> rawscrapeddatas = queryR.getResultList();
         for (Rawscrapeddata curRawscrapeddata : rawscrapeddatas) {
-            if (curRawscrapeddata.getEmailAddress().contains("@")) {
                 Campaign curCampaign = curRawscrapeddata.getCampaign();
                 migrateRawScrapedData(curRawscrapeddata);
-            }
         }
         String pausse = "";
         uiModel.addAttribute("token", "All raw scraped data has been migrated");
@@ -159,9 +157,9 @@ public class RawscrapeddataController {
                 website.persist();
             }
             Url url = new Url();
-//            url.setCampaign(curCampaign);
-//            url.setWebsite(website);
-//            url.setUrl(curRawscrapeddata.getUrl());
+            url.setCampaign(curCampaign);
+            url.setWebsite(website);
+            url.setUrl(curRawscrapeddata.getUrl());
             url.persist();
             curRawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
             curRawscrapeddata.persist();

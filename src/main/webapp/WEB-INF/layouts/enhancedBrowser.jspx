@@ -206,6 +206,11 @@
 
     }
 
+    function getCurrentIframeUrl() {
+        var url = $("#iframeMain").attr('src')
+        alert(url)
+    }
+
 </script>
 
 <div class="enhancedBrowser_sidebarActivator">
@@ -224,6 +229,7 @@
                                                                      onclick="changeUrlStatus('BLOCKED')"> (B) </a>
     <br/>
     <br/>
+    <a href="#" onclick="getCurrentIframeUrl()">Get Current Url</a>
     <br/>
     <br/>
     <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE','urlListHolder')">- Show New</a>
@@ -255,7 +261,7 @@
 
 <div id="enhancedBrowser_iframe">
 
-    <iframe src='http://digg.com' id='iframeMain' width="100%" height="100%">
+    <iframe src='http://indeed.com' id='iframeMain' width="100%" height="100%">
 
     </iframe>
 
