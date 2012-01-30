@@ -16,6 +16,7 @@ import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -93,8 +94,8 @@ public class RawscrapeddataController {
         TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(Rawscrapeddatamigrationstatus.NOT_MIGRATED, RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
         List<Rawscrapeddata> rawscrapeddatas = queryR.getResultList();
         for (Rawscrapeddata curRawscrapeddata : rawscrapeddatas) {
-                Campaign curCampaign = curRawscrapeddata.getCampaign();
-                migrateRawScrapedData(curRawscrapeddata);
+            Campaign curCampaign = curRawscrapeddata.getCampaign();
+            migrateRawScrapedData(curRawscrapeddata);
         }
         String pausse = "";
         uiModel.addAttribute("token", "All raw scraped data has been migrated");
@@ -135,27 +136,31 @@ public class RawscrapeddataController {
                 website = new Website();
                 website.setDomainName(domain);
                 website.setType(WebsiteType.SEARCH_ENGINE);
-               // website.setCampaign(curCampaign);
+                // website.setCampaign(curCampaign);
                 website.setEmailTemplateCategories(emailTemplateCategory);
                 website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.NOT_IN_PROGRESS);
                 website.persist();
             } else {
-                try {
-                    website = queryW.getSingleResult();
-                } catch (Exception e) {
-                    return;
-                }
+
+                website = queryW.getSingleResult();
             }
-            Emailaddress newEmailAddress = new Emailaddress();
-            newEmailAddress.setEmail(scrapedEmail);
-            newEmailAddress.setWebsite(website);
-            newEmailAddress.persist();
+
+            Emailaddress newEmailAddress = null;
+            if (curRawscrapeddata.getEmailAddress().contains("@")) {
+                newEmailAddress = new Emailaddress();
+                newEmailAddress.setEmail(scrapedEmail);
+                newEmailAddress.setWebsite(website);
+                newEmailAddress.persist();
+
+            }
+
             TypedQuery<Emailaddress> queryEmail = Emailaddress.findEmailaddressesByWebsite(website);
             List<Emailaddress> matchingEmails = queryEmail.getResultList();
-            if (matchingEmails.isEmpty()) {
+            if (matchingEmails.isEmpty() && newEmailAddress != null) {
                 website.setEmailPrimary(newEmailAddress);
                 website.persist();
             }
+
             Url url = new Url();
             url.setCampaign(curCampaign);
             url.setWebsite(website);
