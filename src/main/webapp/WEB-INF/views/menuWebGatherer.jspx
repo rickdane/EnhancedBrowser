@@ -24,6 +24,8 @@
                        z="VTQHW7ufcppYcKAQfGs5ufMREjY="/>
             <menu:item id="i_rawscrapeddata_migrateform" messageCode="rawscrapeddata_migrate"
                        url="/rawscrapeddatas?migrateForm" z="user-managed"/>
+            <menu:item label="XML URL Search" id="i_websiteXmlSearchForm"
+                       url="/webgathererjobs?urlXmlSearchForm" z="user-managed"/>
 
 
         </menu:category>
