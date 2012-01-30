@@ -1,5 +1,8 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.*;
 
 import com.sun.org.apache.xerces.internal.parsers.SAXParser;
@@ -85,7 +88,7 @@ public class WebGathererJobController {
 
 
     @RequestMapping(value = "/urlXmlSearch", method = RequestMethod.POST)
-    public String migrateAction(@Valid WebsiteXmlSearchForm websiteXmlSearchForm, BindingResult result, Model uiModel, HttpServletRequest request) {
+    public String urlXmlSearch(@Valid WebsiteXmlSearchForm websiteXmlSearchForm, BindingResult result, Model uiModel, HttpServletRequest request) {
 
         //TODO this is very raw and is hard-coded now for using Indeed.com's XML api, will need to be re-worked going forward
 
@@ -94,6 +97,13 @@ public class WebGathererJobController {
         int limit = 40;
 
         int pages = 4;
+
+        //TODO: make this selectable by user, Campaign & Website are just hard-coded for initial testing
+        Long id = new Long(1);
+        Campaign campaign = Campaign.findCampaign(id);
+
+        Website website = Website.findAllWebsites().get(0);
+
 
         String keyword = websiteXmlSearchForm.getKeyword() + "+" + websiteXmlSearchForm.getLocation();
 
@@ -106,12 +116,26 @@ public class WebGathererJobController {
 
             String response = getUrl(xmlSearchString);
 
-            parseUrlsFromXml(response);
+            List<String> urls = parseUrlsFromXml(response);
+
+            persistUrls(urls, campaign,website);
 
             start = limit + start;
         }
 
         return "token";
+    }
+
+    private void persistUrls(List<String> urls, Campaign campaign, Website website) {
+
+        for (String urlStr : urls) {
+            //persist the url
+            Url url = new Url();
+            url.setCampaign(campaign);
+            url.setWebsite(website);
+            url.setUrl(urlStr);
+            url.persist();
+        }
     }
 
     /**
