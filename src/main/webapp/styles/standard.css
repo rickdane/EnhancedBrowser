@@ -93,6 +93,27 @@ body {
     background: #fff;
 }
 
+/*Enhanced Browser Top--*/
+
+.listTopBar {
+    display: inline;
+}
+
+#enhancedBrowser_topBar {
+    position: absolute;;
+    width: 350px;
+    height: 20px;
+    top: 0px;
+    left: 300px;
+    z-index: 99;
+    border: solid 1px #000;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/*--End Enhanced Browser Top--*/
+
+
 /*Enhanced Browser CSS--*/
 
 #enhancedBrowser_sidebar {

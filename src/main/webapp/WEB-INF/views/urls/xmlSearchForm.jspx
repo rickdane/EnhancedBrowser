@@ -4,6 +4,8 @@
     <form:create label="-- XML API Search" id="fc_webgatherer_websiteSearchForm" modelAttribute="Form" path="/webgathererjobs/urlXmlSearch" render="${empty dependencies}" z="YNTfiVfsLwXpafs22CNiPqmEgdy1d/84Q=">
         <field:input label="Keyword" field="keyword" id="webgatherer_websiteXmlSearchForm_keyword" min="1" required="true" z="GZYqRDV261EffLKuDhfasfEsvmsfs9ahxQE="/>
         <field:input label="Location" field="location" id="webgatherer_websiteXmlSearchForm_location" min="1" required="true" z="GZYqRDV261EffLKufsaDhEsvmsfs9ahxQE="/>
+        <field:input label="Radius" field="radius" id="webgatherer_websiteXmlSearchForm_radius" min="1" required="false" z="GZYqRDV261EffLKufsaDhEsvmsfs9ahxQE="/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" itemValue="id" items="${campaigns}" path="/campaigns" z="/5llCBOLbRFJGHG1h5SvctPcN1Y="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="fc_webgatherer_migrationForm_dependencies" render="${not empty dependencies}" z="kN6hE4fsa5zc+oebCt9qfsdfssdfMlobHeTD/o="/>
 </div>

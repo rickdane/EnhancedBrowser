@@ -16,6 +16,12 @@
 
     <util:load-scripts/>
 
+    <script src="/script/javascript/enhancedBrowser/base.js"
+            type="text/javascript"><!-- /required for FF3 and Opera --></script>
+    <script src="/script/javascript/enhancedBrowser/autoRun.js"
+            type="text/javascript"><!-- /required for FF3 and Opera --></script>
+
+
     <spring:message code="application_name" var="app_name"
                     htmlEscape="false"/>
     <title><spring:message code="welcome_h3" arguments="${app_name}"/></title>
@@ -24,255 +30,86 @@
 <body class="tundra spring">
 <div id="wrapper">
 
-<tiles:insertAttribute name="body"/>
+    <tiles:insertAttribute name="body"/>
+
+    <div id="enhancedBrowser_topBar">
 
 
-<script type="text/javascript">
+        AutoRun:
 
-    divMain = "mainWidget"
+        <ul >
 
-    appPrefix = ""
-
-    formId_paths = new Array()
-
-    function registerSubmitListener(formId, path) {
-
-        formId_paths[formId] = path;
-
-        $('#' + formId).submit(function () {
-            ajaxFormSubmit(formId_paths[formId], formId)
-
-            //must return false in order to cancel the default action which is to refresh the page
-            return false;
-        });
-    }
+            <li class="listTopBar">
+                <a href="#" onclick="startAutoRun()">Start</a> | <a href="#" onclick="stopAutoRun()">Stop</a>
+            </li>
+            <li class="listTopBar">
+               ........... <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
+                                                                                 onclick="changeUrlStatus('BLOCKED')"> (B) </a>
+            </li>
+        </ul>
 
 
-    function ajaxLoadWidget(endpoint, targetDivInpt) {
-        endpoint = appPrefix + endpoint
-
-        var targetDiv = divMain
-        if (targetDivInpt != null) {
-            targetDiv = targetDivInpt
-        }
-
-        $.get(
-                endpoint,
-                "{key:value}",
-                function (data) {
-                    $('#' + targetDiv).html(data);
-
-                    urlTableLoadCallback()
-
-                    //manually select from list (figure out how to genericize this)
-                    registerWithSideMenuSelect("#selectform")
-                },
-                "html"
-        );
-    }
-
-    function ajaxGetNoCallback(endpoint) {
-
-        $.get(
-                endpoint,
-                "{key:value}",
-                function (data) {
-
-                },
-                "html"
-        );
-    }
-
-    function changeUrlStatus(status) {
-
-        var endpoint = '/urls/updateCurStatus/' + status
-
-        $.get(
-                endpoint,
-                "{key:value}",
-                function (data) {
-                    //reload the url list
-                    ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE', 'urlListHolder')
-                },
-                "html"
-        );
-    }
-
-    function ajaxSetSessionAttribute(parameterName, callbackTargetDiv, value) {
-
-        var sessionEndpoint = appPrefix + "/sessionvalues/" + parameterName + "/" + value
-        $.get(
-                sessionEndpoint,
-                "{key:value}",
-                function (data) {
-                    if (callbackTargetDiv != null) {
-                        $("#" + callbackTargetDiv).html(data)
-                    }
-                },
-                "html"
-        );
-    }
-
-
-    function ajaxFormSubmit(endpoint, formId) {
-        var $form = $("#" + formId),
-                $inputs = $form.find("input, select, button, textarea"),
-                serializedData = $form.serialize();
-        $.post(endpoint,
-                serializedData,
-                function (data) {
-                    $("#" + divMain).html(data);
-                },
-                "html"
-        );
-    }
-
-
-    function registerWithSideMenu(elementId) {
-        $(elementId).mouseenter(
-                function () {
-
-                });
-    }
-
-    function registerWithSideMenuSelect(elementId) {
-        $(elementId).mouseenter(
-                function () {
-                    lastClickedIsSelectMenu = true;
-
-                    clickCampaignSelectList()
-                });
-    }
-
-    $(document).ready(function () {
-
-        $("#enhancedBrowser_sidebar").hide();
-
-        $("div.enhancedBrowser_sidebarActivator").mouseenter(
-                function () {
-                    $("#enhancedBrowser_sidebar").show();
-                });
-
-
-        registerWithSideMenu("div.enhancedBrowser_sidebar")
-
-        ajaxLoadWidget("/campaigns/selectForSession", "campaignSelectAjax")
-
-        lastClickedIsSelectMenu = false
-
-        $("#enhancedBrowser_sidebar").mouseleave(
-                function () {
-
-                    if (lastClickedIsSelectMenu) {
-                        lastClickedIsSelectMenu = false
-                        return false
-                    }
-
-                    $("#enhancedBrowser_sidebar").hide();
-
-                });
-    });
-
-
-    function clickCampaignSelectList() {
-        //TODO: need to generalize this, not hard-code it
-        var path = appPrefix + "/campaigns/select/"
-
-        var selectedValue = $("#selectform").val()
-
-        ajaxGetNoCallback(path + selectedValue)
-    }
-
-    function urlTableLoadCallback() {
-        $(".urlDisplayTable").click(
-                function () {
-
-                    modelId = $(this).attr("modelId")
-
-                    //TODO: need to generalize this, not hard-code it
-                    var path = appPrefix + "/urls/select/"
-
-                    ajaxGetNoCallback(path + modelId)
-
-                    url = $(this).html()
-                    loadUrlIntoIframe(url)
-                });
-    }
-
-    function loadUrlIntoIframe(url) {
-
-        $('#iframeMain').attr('src', url);
-        window.frames["iframeMain"].location.reload();
-
-    }
-
-    function getCurrentIframeUrl() {
-        var url = $("#iframeMain").attr('src')
-        alert(url)
-    }
-
-</script>
-
-<div class="enhancedBrowser_sidebarActivator">
-    _
-
-</div>
-
-<div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
-    <strong>Enhanced Browser Menu:</strong>
-    <br/>
-    <br/>
-    Update current site:
-    <br/>
-    <br/>
-    <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
-                                                                     onclick="changeUrlStatus('BLOCKED')"> (B) </a>
-    <br/>
-    <br/>
-    <a href="#" onclick="getCurrentIframeUrl()">Get Current Url</a>
-    <br/>
-    <br/>
-    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE','urlListHolder')">- Show New</a>
-    <br/>
-    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/PROCESSED','urlListHolder')">- Show Processed</a>
-    <br/>
-    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/BLOCKED','urlListHolder')">- Show Blocked</a>
-    <br/>
-
-    <br/>
-
-    <div id="urlListHolder">
-        _
-    </div>
-    <br/>
-    <br/>
-    <br/>
-
-
-    <div id="campaignSelectAjax">
-        _
     </div>
 
-    <div id="websiteSelectAjax">
+
+    <div class="enhancedBrowser_sidebarActivator">
         _
+
     </div>
 
-</div>
+    <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
+        <strong>Enhanced Browser Menu:</strong>
+        <br/>
+        <br/>
+        Update current site:
+        <br/>
+        <br/>
+        <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
+                                                                         onclick="changeUrlStatus('BLOCKED')"> (B) </a>
+        <br/>
+        <br/>
+        <a href="#" onclick="setCurrentStatus('ACTIVE','urlListHolder')">- Show New</a>
+        <br/>
+        <a href="#"
+           onclick="setCurrentStatus('PROCESSED','urlListHolder')">- Show Processed</a>
+        <br/>
+        <a href="#" onclick="setCurrentStatus('BLOCKED','urlListHolder')">- Show Blocked</a>
+        <br/>
 
-<div id="enhancedBrowser_iframe">
+        <br/>
 
-    <iframe src='http://indeed.com' id='iframeMain' width="100%" height="100%">
+        <div id="urlListHolder">
+            _
+        </div>
+        <br/>
+        <br/>
+        <br/>
 
-    </iframe>
-    <br/>
-    <br/>
-    <br/>
+
+        <div id="campaignSelectAjax">
+            _
+        </div>
+
+        <div id="websiteSelectAjax">
+            _
+        </div>
+
+    </div>
+
+    <div id="enhancedBrowser_iframe">
+
+        <iframe src='http://indeed.com' id='iframeMain' width="100%" height="100%">
+
+        </iframe>
+        <br/>
+        <br/>
+        <br/>
     <span id='indeed_at'><a href="http://www.indeed.com/">jobs</a> by <a
             href="http://www.indeed.com/" title="Job Search"><img
             src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
-vertical-align: middle;" alt="Indeed job search" /></a></span>
+vertical-align: middle;" alt="Indeed job search"/></a></span>
 
-</div>
+    </div>
 
 
 </div>

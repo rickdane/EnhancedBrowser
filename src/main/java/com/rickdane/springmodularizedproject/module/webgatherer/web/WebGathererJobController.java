@@ -1,5 +1,6 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
@@ -29,6 +30,7 @@ import javax.validation.Valid;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -83,9 +85,16 @@ public class WebGathererJobController {
     public String createMigrationForm(Model model) {
         WebsiteXmlSearchForm form = new WebsiteXmlSearchForm();
         model.addAttribute("Form", form);
+        List<Campaign> campaigns = Campaign.findAllCampaigns();
+        populateCreateForm(model);
+
         return "urls/xmlSearchForm";
     }
 
+
+    void populateCreateForm(Model uiModel) {
+        uiModel.addAttribute("campaigns", Campaign.findAllCampaigns());
+    }
 
     @RequestMapping(value = "/urlXmlSearch", method = RequestMethod.POST)
     public String urlXmlSearch(@Valid WebsiteXmlSearchForm websiteXmlSearchForm, BindingResult result, Model uiModel, HttpServletRequest request) {
@@ -93,17 +102,19 @@ public class WebGathererJobController {
         //TODO this is very raw and is hard-coded now for using Indeed.com's XML api, will need to be re-worked going forward
 
         final String apiKey = "6795409185280638";
-        int radius = 100;
         int limit = 40;
 
-        int pages = 4;
+        int pages = 10;
 
         //TODO: make this selectable by user, Campaign & Website are just hard-coded for initial testing
-        Long id = new Long(1);
-        Campaign campaign = Campaign.findCampaign(id);
-
         Website website = Website.findAllWebsites().get(0);
 
+       Campaign campaign = websiteXmlSearchForm.getCampaign();
+
+        String radius = websiteXmlSearchForm.getRadius();
+        if (radius == null || radius.equals("")) {
+            radius = "10";
+        }
 
         String keyword = websiteXmlSearchForm.getKeyword() + "+" + websiteXmlSearchForm.getLocation();
 
