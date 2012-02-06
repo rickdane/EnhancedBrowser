@@ -6,6 +6,52 @@ formId_paths = new Array()
 
 curStatus = "ACTIVE"
 
+
+//encapsulator()
+//
+//function testCallBack() {
+//    alert("testcallback")
+//    function test() {
+//        alert("something")
+//
+//    }
+//}
+//
+//function independentFunc() {
+//    alert("its def working")
+//}
+//
+//function encapsulator() {
+//
+////    var callback = function () {
+////
+////         innerFunction = function () {
+////
+////            alert("hot damn fool")
+////        }
+////
+////            innerFunction()
+////
+////    }
+//
+//    var callback = function () {
+//        independentFunc()
+//    }
+//
+//    thirdFunction(callback)
+//
+//}
+//
+//function thirdFunction(func) {
+//    alert("before")
+//    func()
+//}
+
+/**
+ * Deprecated?
+ * @param status
+ * @param targetDivInpt
+ */
 function setCurrentStatus(status, targetDivInpt) {
 
     curStatus = status
@@ -13,6 +59,8 @@ function setCurrentStatus(status, targetDivInpt) {
     var endPoint = "/urls/findByStatus/CURUSER/" + status
 
     ajaxLoadWidget(endPoint, targetDivInpt)
+
+    urlTableLoadCallback()
 
 }
 
@@ -29,7 +77,6 @@ function registerSubmitListener(formId, path) {
 }
 
 
-
 function ajaxGetNoCallback(endpoint) {
 
     $.get(
@@ -42,7 +89,7 @@ function ajaxGetNoCallback(endpoint) {
     );
 }
 
-function changeUrlStatus(status) {
+function changeUrlStatus(status, callbackAfter) {
 
     var endpoint = '/urls/updateCurStatus/' + status
 
@@ -50,10 +97,8 @@ function changeUrlStatus(status) {
         endpoint,
         "{key:value}",
         function (data) {
-            //reload the url list
-            ajaxLoadWidget('/urls/findByStatus/CURUSER/' + curStatus, 'urlListHolder', null, function () {
-                changeUrlStatusCallback()
-            })
+
+            ajaxLoadWidget('/urls/findByStatus/CURUSER/' + curStatus, 'urlListHolder', null, callbackAfter)
 
         },
         "html"
@@ -155,6 +200,7 @@ function clickCampaignSelectList() {
 
 
 function urlTableLoadCallback() {
+
     $(".urlDisplayTable").click(
         function () {
 
@@ -192,7 +238,8 @@ function getCurrentIframeUrl() {
 }
 
 
-function ajaxLoadWidget(endpoint, targetDivInpt, callbackFunction) {
+function ajaxLoadWidget(endpoint, targetDivInpt, callbackFunctionBefore, callbackFunctionAfter) {
+
     endpoint = appPrefix + endpoint
 
     var targetDiv = divMain
@@ -204,18 +251,40 @@ function ajaxLoadWidget(endpoint, targetDivInpt, callbackFunction) {
         endpoint,
         "{key:value}",
         function (data) {
-            if (callbackFunction != null) {
-                callbackFunction()
+
+            if (callbackFunctionBefore != null) {
+                callbackFunctionBefore()
             }
-            else {
-                $('#' + targetDiv).html(data);
 
-                urlTableLoadCallback()
+            ajaxLoadWidgetDefaultCallback(targetDiv, data)
 
-                //manually select from list (figure out how to genericize this)
-                registerWithSideMenuSelect("#selectform")
+            if (callbackFunctionAfter != null) {
+                callbackFunctionAfter()
             }
         },
         "html"
     );
+}
+
+function ajaxLoadWidgetDefaultCallback(targetDiv, data) {
+
+    $('#' + targetDiv).html(data);
+
+    urlTableLoadCallback()
+
+    var curElement = $(".urlDisplayTable").first()
+
+    if (curElement != null && curElement != undefined) {
+
+        var curUrl = curElement.html()
+        var curUrlModelId = curElement.attr("modelid")
+
+        if (curUrl != undefined && curUrlModelId != undefined) {
+            selectUrlinSession(curUrl, curUrlModelId)
+        }
+    }
+
+
+//manually select from list (figure out how to genericize this)
+    registerWithSideMenuSelect("#selectform")
 }

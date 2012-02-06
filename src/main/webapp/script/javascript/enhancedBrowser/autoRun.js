@@ -1,8 +1,10 @@
-var autoRunIntervalSeconds = 15
+var autoRunIntervalSeconds = 7
 
 autoRun = false
 
 lastUrlModelId = ""
+
+SKIP_STATUS = "BLOCKED"
 
 function startAutoRun() {
 
@@ -42,7 +44,13 @@ function autoRunMarkSkipped() {
 
     //note: order these are called in is important
 
-    changeUrlStatus("BLOCKED")
+
+
+    var callback = function () {
+        changeUrlStatusCallback()
+    }
+
+    changeUrlStatus(SKIP_STATUS, callback)
 
 }
 
