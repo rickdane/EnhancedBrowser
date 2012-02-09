@@ -6,6 +6,13 @@ formId_paths = new Array()
 
 curStatus = "ACTIVE"
 
+properties = {};
+
+properties["PROCESSED"] = "URL Marked as Processed";
+properties["BLOCKED"] = "URL Blocked";
+properties["autoRun_started"] = "Auto-run started";
+properties["autoRun_paused"] = "Auto-run paused";
+
 
 //encapsulator()
 //
@@ -100,9 +107,24 @@ function changeUrlStatus(status, callbackAfter) {
 
             ajaxLoadWidget('/urls/findByStatus/CURUSER/' + curStatus, 'urlListHolder', null, callbackAfter)
 
+            var displayVal = properties[status]
+            temporaryTextDisplay("autoRun_text", displayVal, .5)
         },
         "html"
     );
+}
+
+function temporaryTextDisplay(elementId, displayString, lengthSeconds) {
+    $("#" + elementId).css("display", "block")
+    $("#" + elementId).html(displayString)
+    setTimeout(function () {
+        temporaryTextHide(elementId)
+    }, lengthSeconds * 1000);
+
+}
+
+function temporaryTextHide(elementId) {
+    $("#" + elementId).css("display", "none")
 }
 
 function changeUrlStatusCallback() {

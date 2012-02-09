@@ -2,7 +2,7 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:tiles="http://tiles.apache.org/tags-tiles"
       xmlns:spring="http://www.springframework.org/tags"
-      xmlns:util="urn:jsptagdir:/WEB-INF/tags/util">
+      xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:html="http://www.w3.org/1999/xhtml">
 
 <jsp:output doctype-root-element="HTML"
             doctype-system="about:legacy-compat"/>
@@ -34,80 +34,95 @@
 
     <div id="enhancedBrowser_topBar">
 
-
-        AutoRun:
-
-        <ul >
-
-            <li class="listTopBar">
-                <a href="#" onclick="startAutoRun()">Start</a> | <a href="#" onclick="stopAutoRun()">Stop</a>
-            </li>
-            <li class="listTopBar">
-               ........... <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
-                                                                                 onclick="changeUrlStatus('BLOCKED')"> (B) </a>
+        <ul>
+            <li id="autoRun_icons" class="listTopBar">
+                <div class="autoRunContainer">
+                    <div id="autoRun_text" class="listTopBar">
+                        <jsp:text/>
+                    </div>
+                    <br/>
+                    <img src="/icons/status_processed.png" href="#" onclick="changeUrlStatus('PROCESSED')"/>
+                    <img src="/icons/status_blocked.png" href="#" onclick="changeUrlStatus('BLOCKED')"/>
+                </div>
             </li>
         </ul>
-
 
     </div>
 
 
     <div class="enhancedBrowser_sidebarActivator">
-        _
+        <jsp:text/>
 
     </div>
 
     <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
-        <strong>Enhanced Browser Menu:</strong>
+        <strong>Enhanced Job Browser</strong>
         <br/>
         <br/>
         Update current site:
         <br/>
         <br/>
-        <a href="#" onclick="changeUrlStatus('PROCESSED')"> (P)</a> | <a href="#"
-                                                                         onclick="changeUrlStatus('BLOCKED')"> (B) </a>
+        <img src="/icons/status_processed.png" href="#" onclick="changeUrlStatus('PROCESSED')"/>
+        <img src="/icons/status_blocked.png" href="#" onclick="changeUrlStatus('BLOCKED')"/>
+
         <br/>
         <br/>
-        <a href="#" onclick="setCurrentStatus('ACTIVE','urlListHolder')">- Show New</a>
         <br/>
-        <a href="#"
-           onclick="setCurrentStatus('PROCESSED','urlListHolder')">- Show Processed</a>
+        Select Job Search Campaign:
         <br/>
-        <a href="#" onclick="setCurrentStatus('BLOCKED','urlListHolder')">- Show Blocked</a>
         <br/>
 
+        <div id="campaignSelectAjax">
+            <jsp:text/>
+        </div>
+        <div id="websiteSelectAjax">
+            <jsp:text/>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        Display Urls of Status:
+        <br/>
+        <br/>
+        <img src="/icons/display_new.png" href="#" onclick="setCurrentStatus('ACTIVE','urlListHolder')"/>
+        <img src="/icons/display_processed.png" href="#" onclick="setCurrentStatus('PROCESSED','urlListHolder')"/>
+        <img src="/icons/display_blocked.png" href="#" onclick="setCurrentStatus('BLOCKED','urlListHolder')"/>
+        <br/>
+        <br/>
+        <br/>
+        Auto-run Controls:
+        <br/>
+        <br/>
+
+        <img src="/icons/start.png" href="#" onclick="startAutoRun()"/>
+        <img src="/icons/pause.png" href="#" onclick="stopAutoRun()"/>
+        <br/>
+        <br/>
         <br/>
 
         <div id="urlListHolder">
-            _
+            <jsp:text/>
         </div>
-        <br/>
-        <br/>
+
+
         <br/>
 
 
-        <div id="campaignSelectAjax">
-            _
-        </div>
 
-        <div id="websiteSelectAjax">
-            _
-        </div>
+
+            <span id='indeed_at'><a href="http://www.indeed.com/">jobs</a> by <a
+                    href="http://www.indeed.com/" title="Job Search"><img
+                    src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
+vertical-align: middle;" alt="Indeed job search"/></a></span>
 
     </div>
 
     <div id="enhancedBrowser_iframe">
 
-        <iframe src='http://indeed.com' id='iframeMain' width="100%" height="100%">
+        <iframe src="http://indeed.com" id='iframeMain' width="100%" height="100%">
 
         </iframe>
         <br/>
-        <br/>
-        <br/>
-    <span id='indeed_at'><a href="http://www.indeed.com/">jobs</a> by <a
-            href="http://www.indeed.com/" title="Job Search"><img
-            src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
-vertical-align: middle;" alt="Indeed job search"/></a></span>
 
     </div>
 

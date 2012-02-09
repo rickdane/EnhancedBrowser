@@ -12,10 +12,19 @@ function startAutoRun() {
 
     setTimeout(autoRunNextPage, autoRunIntervalSeconds * 1000)
 
+    var displayVal = properties["autoRun_started"]
+    temporaryTextDisplay("autoRun_text", displayVal, 2)
+
+    $("#autoRun_icons").css("display", "block")
+
+
 }
 
 function stopAutoRun() {
     autoRun = false
+    var displayVal = properties["autoRun_paused"]
+    temporaryTextDisplay("autoRun_text", displayVal, 1)
+    $("#autoRun_icons").css("display", "none")
 }
 
 
@@ -43,7 +52,6 @@ function autoRunNextPage() {
 function autoRunMarkSkipped() {
 
     //note: order these are called in is important
-
 
 
     var callback = function () {

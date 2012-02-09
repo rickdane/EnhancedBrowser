@@ -6,6 +6,7 @@ body, div, td {
     color: #666;
 }
 
+
 option {
     z-index: 999;
 }
@@ -96,7 +97,23 @@ body {
 /*Enhanced Browser Top--*/
 
 .listTopBar {
-    display: inline;
+    display: none;
+
+}
+
+.autoRunContainer {
+    padding: 10px;
+    width: 150px;
+    height: 60px;
+    border-radius: 19px;
+
+    -moz-border-radius: 19px;
+
+    -webkit-border-radius: 19px;
+
+    border: 1px solid #00021C;
+    background-color: #fff;
+
 }
 
 #enhancedBrowser_topBar {
@@ -106,9 +123,8 @@ body {
     top: 0px;
     left: 300px;
     z-index: 99;
-    border: solid 1px #000;
+    border: solid 0px;
     padding: 20px;
-    background-color: #ffffff;
 }
 
 /*--End Enhanced Browser Top--*/
@@ -125,7 +141,8 @@ body {
     z-index: 99;
     border: solid 1px #000;
     padding: 20px;
-    background-color: #ffffff;
+    background: -moz-linear-gradient(rgb(228, 236, 251) 0%, rgb(255, 255, 255) 100%, rgb(255, 255, 255) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(228, 236, 251)), color-stop(100%, rgb(255, 255, 255)), color-stop(100%, rgb(255, 255, 255)));
 }
 
 .enhancedBrowser_sidebarActivator {
@@ -135,7 +152,7 @@ body {
     top: 0px;
     left: 0px;
     z-index: 1000;
-    background-color: #ffffff;
+    background-color: #000;
 }
 
 #enhancedBrowser_iframe {
@@ -222,10 +239,6 @@ input.image {
     border: none;
     height: auto;
     vertical-align: middle;
-}
-
-submit {
-    height: 25px;
 }
 
 div {
