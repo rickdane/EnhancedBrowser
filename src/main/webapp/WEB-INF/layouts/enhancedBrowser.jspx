@@ -16,10 +16,16 @@
 
     <util:load-scripts/>
 
-    <script src="/script/javascript/enhancedBrowser/base.js"
+    <script src="/script/javascript/enhancedBrowser/SideMenu.js"
             type="text/javascript"><!-- /required for FF3 and Opera --></script>
-    <script src="/script/javascript/enhancedBrowser/autoRun.js"
+    <script src="/script/javascript/enhancedBrowser/AjaxUtility.js"
             type="text/javascript"><!-- /required for FF3 and Opera --></script>
+    <script src="/script/javascript/enhancedBrowser/AutoRun.js"
+            type="text/javascript"><!-- /required for FF3 and Opera --></script>
+
+    <script src="/script/javascript/enhancedBrowser/Base.js"
+            type="text/javascript"><!-- /required for FF3 and Opera --></script>
+
 
 
     <spring:message code="application_name" var="app_name"
@@ -29,6 +35,13 @@
 
 <body class="tundra spring">
 <div id="wrapper">
+
+    <div id="menuMain">
+
+        main menu
+
+    </div>
+
 
     <tiles:insertAttribute name="body"/>
 
@@ -41,8 +54,8 @@
                         <jsp:text/>
                     </div>
                     <br/>
-                    <img src="/icons/status_processed.png" href="#" onclick="changeUrlStatus('PROCESSED')"/>
-                    <img src="/icons/status_blocked.png" href="#" onclick="changeUrlStatus('BLOCKED')"/>
+                    <img class="urlStatus_MarkProcessed" src="/icons/status_processed.png" href="#"/>
+                    <img class="urlStatus_MarkBlocked" src="/icons/status_blocked.png" href="#"/>
                 </div>
             </li>
         </ul>
@@ -62,8 +75,8 @@
         Update current site:
         <br/>
         <br/>
-        <img src="/icons/status_processed.png" href="#" onclick="changeUrlStatus('PROCESSED')"/>
-        <img src="/icons/status_blocked.png" href="#" onclick="changeUrlStatus('BLOCKED')"/>
+        <img class="urlStatus_MarkProcessed" src="/icons/status_processed.png" href="#"/>
+        <img class="urlStatus_MarkBlocked"  src="/icons/status_blocked.png" href="#"/>
 
         <br/>
         <br/>
@@ -84,9 +97,9 @@
         Display Urls of Status:
         <br/>
         <br/>
-        <img src="/icons/display_new.png" href="#" onclick="setCurrentStatus('ACTIVE','urlListHolder')"/>
-        <img src="/icons/display_processed.png" href="#" onclick="setCurrentStatus('PROCESSED','urlListHolder')"/>
-        <img src="/icons/display_blocked.png" href="#" onclick="setCurrentStatus('BLOCKED','urlListHolder')"/>
+        <img id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
+        <img id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
+        <img id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
         <br/>
         <br/>
         <br/>
@@ -94,8 +107,8 @@
         <br/>
         <br/>
 
-        <img src="/icons/start.png" href="#" onclick="startAutoRun()"/>
-        <img src="/icons/pause.png" href="#" onclick="stopAutoRun()"/>
+        <img id="autorunStart" src="/icons/start.png" href="#"/>
+        <img id="autorunStop" src="/icons/pause.png" href="#"/>
         <br/>
         <br/>
         <br/>
@@ -126,7 +139,9 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
 
     </div>
 
-
 </div>
+
+
+
 </body>
 </html>

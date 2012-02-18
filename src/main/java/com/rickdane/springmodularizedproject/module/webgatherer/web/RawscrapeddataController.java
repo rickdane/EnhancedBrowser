@@ -42,6 +42,10 @@ public class RawscrapeddataController {
         model.addAttribute("Form", form);
         return "rawscrapeddatas/migrationForm";
     }
+    
+    public void testJRebel() {
+         System.out.println("its working");
+        }
 
     @RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<java.lang.String> createFromJson(@RequestBody String json) {

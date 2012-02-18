@@ -121,9 +121,12 @@ public class WebGathererJobController {
         int start = 1;
 
         for (int i = 1; i <= pages; i++) {
+//            String xmlSearchString = "http://api.indeed.com/ads/apisearch?publisher=" + apiKey + ""
+//                    + "&q=" + keyword + "&sort=&radius=" + radius
+//                    + "&st=&jt=&start=" + start + "&limit=" + limit + "&v=2";
+
             String xmlSearchString = "http://api.indeed.com/ads/apisearch?publisher=" + apiKey + ""
-                    + "&q=" + keyword + "&sort=&radius=" + radius
-                    + "&st=&jt=&start=" + start + "&limit=" + limit + "&v=2";
+                    + "&q=" + keyword +"&as_phr=&as_any=&as_not=&as_ttl=software&as_cmp=&jt=all&st=&salary=&radius=25&l=sacramento%2C+ca&fromage=any&limit=30&sort=&psf=advsrch&v=2";
 
             String response = getUrl(xmlSearchString);
 
