@@ -6,7 +6,6 @@ body, div, td {
     color: #666;
 }
 
-
 option {
     z-index: 999;
 }
@@ -15,6 +14,12 @@ body {
     background-color: #fff;
     text-align: center;
 }
+
+
+.linkIcon {
+    cursor: pointer;
+}
+
 
 #header {
     position: absolute;
@@ -60,16 +65,6 @@ body {
     width: 600px;
     margin-right: 15px;
 }
-
-/*#menu ul{*/
-/*list-style: none;*/
-/*margin: 0;*/
-/*padding: 0;*/
-/*}*/
-
-/*#menu ul li{*/
-/*padding: 0px;*/
-/*}*/
 
 #menu a, #menu h2 {
     margin: 0;
@@ -122,13 +117,12 @@ body {
     height: 20px;
     top: 0px;
     left: 300px;
-    z-index: 99;
+    z-index: 155;
     border: solid 0px;
     padding: 20px;
 }
 
 /*--End Enhanced Browser Top--*/
-
 
 /*Enhanced Browser CSS--*/
 
@@ -137,7 +131,7 @@ body {
     border-radius: 15px;
     position: absolute;;
     width: 200px;
-    height: 800px;
+    height: 550px;
     top: 0px;
     left: 0px;
     z-index: 99;
@@ -149,8 +143,8 @@ body {
 
 .enhancedBrowser_sidebarActivator {
     position: absolute;;
-    width: 10px;
-    height: 100%;
+    width: 8px;
+    height: 550px;
     top: 0px;
     left: 0px;
     z-index: 1000;
@@ -181,7 +175,7 @@ body {
 }
 
 .urlDisplayTable {
-
+    cursor: pointer;
 }
 
 .selectList {
@@ -198,6 +192,7 @@ body {
 
 #menuMain {
     position: absolute;
+    display: none;
     width: 700px;
     height: 400px;
     top: 45px;
@@ -209,7 +204,6 @@ body {
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
-
 
 /*--END Menu */
 #footer {
@@ -406,14 +400,6 @@ table a:link {
     width: 18px;
 }
 
-caption {
-    caption-side: top;
-    width: auto;
-    text-align: left;
-    font-size: 12px;
-    color: #848f73;
-    padding-bottom: 4px;
-}
 
 fieldset {
     background: #B8B8CC;
@@ -507,4 +493,28 @@ fieldset th {
 .flag {
     height: 11px;
     width: 16px;
+}
+
+
+[title]:hover:before {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    content: attr(title); /* This gives the :before the content from the title attribute of the link */
+    position: absolute;
+    top:-50px;
+    left:0;
+    z-index: 5;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 10px;
+    padding: 6px 6px 15px 6px;
+    line-height: 100%;
+    opacity: 1;
+    height: 5px;
+    width: 100px;
+    background: #222 bottom left no-repeat; /* This makes the tooltip a bit prettier. view/download arrow.png*/
+}
+
+[title] {
+    position:relative;
 }

@@ -42,8 +42,10 @@ function TextDisplayManager() {
     this.temporaryTextDisplay = function (elementId, displayString, lengthSeconds) {
         $("#" + elementId).css("display", "block")
         $("#" + elementId).html(displayString)
+
+            var obj = this
         setTimeout(function () {
-            this.temporaryTextHide(elementId)
+            obj.temporaryTextHide(elementId)
         }, lengthSeconds * 1000);
 
     }

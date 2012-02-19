@@ -27,7 +27,6 @@
             type="text/javascript"><!-- /required for FF3 and Opera --></script>
 
 
-
     <spring:message code="application_name" var="app_name"
                     htmlEscape="false"/>
     <title><spring:message code="welcome_h3" arguments="${app_name}"/></title>
@@ -54,8 +53,9 @@
                         <jsp:text/>
                     </div>
                     <br/>
-                    <img class="urlStatus_MarkProcessed" src="/icons/status_processed.png" href="#"/>
-                    <img class="urlStatus_MarkBlocked" src="/icons/status_blocked.png" href="#"/>
+                    <img title="teesss" class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png"
+                         href="#"/>
+                    <img class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
                 </div>
             </li>
         </ul>
@@ -71,17 +71,7 @@
     <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
         <strong>Enhanced Job Browser</strong>
         <br/>
-        <br/>
-        Update current site:
-        <br/>
-        <br/>
-        <img class="urlStatus_MarkProcessed" src="/icons/status_processed.png" href="#"/>
-        <img class="urlStatus_MarkBlocked"  src="/icons/status_blocked.png" href="#"/>
-
-        <br/>
-        <br/>
-        <br/>
-        Select Job Search Campaign:
+        Load Job Search Campaign:
         <br/>
         <br/>
 
@@ -92,26 +82,38 @@
             <jsp:text/>
         </div>
         <br/>
-        <br/>
-        <br/>
         Display Urls of Status:
         <br/>
         <br/>
-        <img id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
-        <img id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
-        <img id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
+        <span title="New Job Urls">
+            <img class="linkIcon" id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
+        </span>
+        <span title="Processed Job Urls">
+        <img class="linkIcon" id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
+        </span>
+        <span title="Blocked Job Urls">
+        <img class="linkIcon" id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
+        </span>
         <br/>
         <br/>
+         <span style="padding-right: 15px;"  > Update Status:</span> AutoRun:
         <br/>
-        Auto-run Controls:
         <br/>
+                <span title="Show Processed Urls">
+       <img class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png" href="#"/>
+        </span>
+                <span style="padding-right: 25px;"  title="Show Blocked Urls">
+          <img class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
+        </span>
+                <span title="Start AutoRun">
+       <img class="linkIcon" id="autorunStart" src="/icons/start.png" href="#"/>
+        </span>
+                <span title="Pause AutoRun">
+         <img class="linkIcon" id="autorunStop" src="/icons/pause.png" href="#"/>
+        </span>
+
         <br/>
 
-        <img id="autorunStart" src="/icons/start.png" href="#"/>
-        <img id="autorunStop" src="/icons/pause.png" href="#"/>
-        <br/>
-        <br/>
-        <br/>
 
         <div id="urlListHolder">
             <jsp:text/>
@@ -119,9 +121,6 @@
 
 
         <br/>
-
-
-
 
             <span id='indeed_at'><a href="http://www.indeed.com/">jobs</a> by <a
                     href="http://www.indeed.com/" title="Job Search"><img
@@ -132,7 +131,7 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
 
     <div id="enhancedBrowser_iframe">
 
-        <iframe src="http://indeed.com" id='iframeMain' width="100%" height="100%">
+        <iframe scrolling="no"  src="http://indeed.com" id='iframeMain' width="100%" height="100%">
 
         </iframe>
         <br/>
@@ -140,7 +139,6 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
     </div>
 
 </div>
-
 
 
 </body>

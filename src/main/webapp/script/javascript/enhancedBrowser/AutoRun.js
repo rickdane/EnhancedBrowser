@@ -12,7 +12,7 @@ function AutoRun(textDisplayManager, properties) {
 
         this.autoRunOn = true
 
-        setTimeout(autoRunNextPage, autoRunIntervalSeconds * 1000)
+        setTimeout(this.autoRunNextPage, autoRunIntervalSeconds * 1000)
 
         var displayVal = properties["autoRun_started"]
         textDisplayManager.temporaryTextDisplay("autoRun_text", displayVal, 2)
@@ -46,7 +46,7 @@ function AutoRun(textDisplayManager, properties) {
 
             this.lastUrlModelId = curUrlModelId
 
-            setTimeout(autoRunNextPage, autoRunIntervalSeconds * 1000)
+            setTimeout(this.autoRunNextPage, autoRunIntervalSeconds * 1000)
         }
     }
 

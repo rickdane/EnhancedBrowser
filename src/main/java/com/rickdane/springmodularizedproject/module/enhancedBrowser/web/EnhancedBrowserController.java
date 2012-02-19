@@ -24,14 +24,9 @@ public class EnhancedBrowserController {
     @RequestMapping(produces = "text/html")
     public String show(Model uiModel) {
 
-        testJRebel();
-
         return "enhancedBrowser/index";
     }
 
-    public void testJRebel() {
-        System.out.println("321312....");
-    }
 
     @RequestMapping(value = "/loadMainMenu", produces = "text/html")
     public String loadMainMenu(Model uiModel) {

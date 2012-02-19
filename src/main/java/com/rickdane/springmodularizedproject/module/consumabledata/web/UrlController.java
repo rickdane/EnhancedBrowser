@@ -29,6 +29,8 @@ public class UrlController {
 
         //it is assumed at this point that a session campaign and session user has been set, before this controller has been called
 
+        int maxResults = 10;
+
         UrlType urlType = UrlType.valueOf(urlTypeStr);
 
         UrlStatus urlStatus = UrlStatus.valueOf(urlStatusStr);
@@ -41,7 +43,7 @@ public class UrlController {
 
         if (campaign != null) {
 
-            List<Url> urlList = Url.findUrlsByUrlStatusAndCampaign(urlStatus, campaign).getResultList();
+            List<Url> urlList = Url.findUrlsByUrlStatusAndCampaign(urlStatus, campaign).setMaxResults(maxResults).getResultList();
             uiModel.addAttribute("urls", urlList);
 
             addDateTimeFormatPatterns(uiModel);
