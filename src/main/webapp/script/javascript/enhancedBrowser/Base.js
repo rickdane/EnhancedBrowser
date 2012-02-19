@@ -7,36 +7,6 @@ formId_paths = new Array()
 curStatus = "ACTIVE"
 
 
-function BaseMenu() {
-
-    this.display = function () {
-
-        var targetDiv = this.divId
-
-        $.get(
-            this.getUrl,
-            "{key:value}",
-            function (data) {
-
-                $("#" + targetDiv).html(data)
-
-            },
-            "html"
-        );
-
-    }
-}
-
-
-//this probably isn't the optimal way to do this, mainly just testing class inheritance in JS
-function MainMenu() {
-    this.divId = "menuMain"
-    this.getUrl = "/enhancedbrowser/loadMainMenu"
-}
-
-MainMenu.prototype = new BaseMenu();
-
-
 function TextDisplayManager() {
 
     this.temporaryTextDisplay = function (elementId, displayString, lengthSeconds) {
@@ -208,17 +178,15 @@ $(document).ready(function () {
     var textDisplayManager = new TextDisplayManager()
     var iframeManager = new IframeManager()
 
+
     registerIconResizeManagers()
 
     autoRun = new AutoRun(textDisplayManager, properties)
 
-    mobj = new MainMenu()
-    mobj.display()
-
     sideMenu = new SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, autoRun)
 
-
-    // register icon resize managers   ------
+    var menuManager = new MenuManager(sideMenu)
+    menuManager.showMenu("menuContent_welcome")
 
 
     // register listeners on DOM elements
@@ -246,6 +214,7 @@ $(document).ready(function () {
         sideMenu.changeUrlStatus('BLOCKED')
     });
 
+
     function registerIconResizeManagers() {
         var iconArr1 = {}
         iconArr1[0] = "sideMenu_DisplayNew"
@@ -269,6 +238,40 @@ $(document).ready(function () {
         iconArr3[0] = "autorunStart"
         iconArr3[1] = "autorunStop"
         iconSizeManager3 = new IconSizeManager(iconArr3, 33)
+    }
+
+    function MenuManager(sideMenuObj) {
+
+        this.showMenu = function (elementContents) {
+            var contents = $("#" + elementContents).html()
+
+            $('#menuMain').html(contents)
+
+            $('#menuMain').show()
+            $("#overlayDim").show()
+
+        }
+
+        this.hideMenu = function () {
+            $('#menuMain').hide()
+            $("#overlayDim").hide()
+            this.sideMenuObj.showSideMenu()
+        }
+
+        this.init = function () {
+
+            this.sideMenuObj = sideMenuObj
+
+            $("#menuLinkHolder").click(function () {
+                menuManager.showMenu("menuContent_mainMenu")
+            });
+
+            $("#overlayDim").click(function () {
+                menuManager.hideMenu()
+            });
+        }
+
+        this.init()
     }
 
 });

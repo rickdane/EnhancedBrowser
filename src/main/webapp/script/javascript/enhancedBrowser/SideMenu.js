@@ -106,6 +106,10 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
     }
 
+    this.showSideMenu = function () {
+        $("#" + sideBarDivId).show();
+    }
+
     this.init = function () {
 
         $("#" + sideBarDivId).hide();

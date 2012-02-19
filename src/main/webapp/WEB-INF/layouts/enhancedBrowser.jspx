@@ -37,8 +37,23 @@
 
     <div id="menuMain">
 
-        main menu
+        <jsp:text/>
 
+    </div>
+
+    <div id="menuContent_welcome">
+        Welcome, this is a great way to apply for jobs!
+    </div>
+
+    <div id="menuContent_mainMenu">
+        This is the main menu
+    </div>
+
+
+
+    <div id ="overlayDim">
+
+        <jsp:text/>
     </div>
 
 
@@ -73,6 +88,8 @@
         <jsp:text/>
 
     </div>
+
+
 
     <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
         <strong>Enhanced Job Browser</strong>
@@ -147,6 +164,21 @@
                     src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
 vertical-align: middle;" alt="Indeed job search"/></a></span>
 
+        <div id="menuLinkHolder">
+            <span id="menuLink" class="textHorizontal">
+                <p>
+                    Menu
+                </p>
+            </span>
+             <span class="textHorizontal">
+
+            </span>
+             <span class="textHorizontal">
+
+            </span>
+
+        </div>
+
     </div>
 
     <div id="enhancedBrowser_iframe">
@@ -157,6 +189,8 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
         <br/>
 
     </div>
+
+
 
 </div>
 

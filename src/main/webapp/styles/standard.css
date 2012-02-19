@@ -42,6 +42,7 @@ body {
     display: block;
 }
 
+
 /* header and footer elements */
 
 #mainWidget {
@@ -145,6 +146,8 @@ body {
     position: absolute;;
     width: 8px;
     height: 550px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     top: 0px;
     left: 0px;
     z-index: 1000;
@@ -199,7 +202,7 @@ body {
     height: 400px;
     top: 45px;
     left: 275px;
-    z-index: 123;
+    z-index: 225;
     border: solid 1px #000;
     padding: 20px;
     background-color: #fff;
@@ -533,4 +536,55 @@ fieldset th {
     position: absolute;
     top: 172px;
 }
+
+
+#menuLinkHolder {
+
+    background-color: #000;
+    color: #fff;
+    width: 15px;
+    height: 140px;
+    z-index: 145;
+    position: absolute;
+    top: 40px;
+    left: 220px;
+    font-size:16px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 3px;
+
+    cursor: pointer;
+
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
+
+
+#overlayDim {
+    position: absolute;
+    left:0px;
+    top:0px;
+    display:none;
+    z-index: 144;
+    opacity:0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 220;
+
+    background: #959595; /* Old browsers */
+    background: -moz-linear-gradient(top, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#959595), color-stop(46%,#0d0d0d), color-stop(50%,#010101), color-stop(53%,#0a0a0a), color-stop(76%,#4e4e4e), color-stop(87%,#383838), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* IE10+ */
+    background: linear-gradient(top, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+}
+
 
