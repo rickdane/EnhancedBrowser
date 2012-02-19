@@ -198,7 +198,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Url, String> ApplicationConversionServiceFactoryBean.getUrlToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Url, java.lang.String>() {
             public String convert(Url url) {
-                return new StringBuilder().append(url.getUrl()).append(" ").append(url.getDateLastPostedTo()).toString();
+                return new StringBuilder().append(url.getUrl()).append(" ").append(url.getTitle()).append(" ").append(url.getPreview()).append(" ").append(url.getCompany()).toString();
             }
         };
     }

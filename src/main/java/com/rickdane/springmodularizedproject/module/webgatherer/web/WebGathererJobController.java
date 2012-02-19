@@ -1,12 +1,10 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
-import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.*;
 
-import com.sun.org.apache.xerces.internal.parsers.SAXParser;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,17 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -130,7 +124,7 @@ public class WebGathererJobController {
 
             String response = getUrl(xmlSearchString);
 
-            List<String> urls = parseUrlsFromXml(response);
+            List<Url> urls = parseIndeedXml(response);
 
             persistUrls(urls, campaign,website);
 
@@ -140,14 +134,12 @@ public class WebGathererJobController {
         return "token";
     }
 
-    private void persistUrls(List<String> urls, Campaign campaign, Website website) {
+    private void persistUrls(List<Url> urls, Campaign campaign, Website website) {
 
-        for (String urlStr : urls) {
+        for (Url url : urls) {
             //persist the url
-            Url url = new Url();
             url.setCampaign(campaign);
             url.setWebsite(website);
-            url.setUrl(urlStr);
             url.persist();
         }
     }
@@ -158,9 +150,9 @@ public class WebGathererJobController {
      * @param xml
      * @return
      */
-    private List<String> parseUrlsFromXml(String xml) {
+    private List<Url> parseIndeedXml(String xml) {
 
-        List<String> retList = null;
+        List<Url> retList = null;
 
         UrlXmlHandler urlXmlHandler = new UrlXmlHandler();
         SAXParserFactory factory = SAXParserFactory.newInstance();

@@ -20,7 +20,7 @@ privileged aspect Url_Roo_Finder {
         q.setParameter("campaign", campaign);
         return q;
     }
-
+    
     public static TypedQuery<Url> Url.findUrlsByUrlStatusAndCampaign(UrlStatus urlStatus, Campaign campaign) {
         if (urlStatus == null) throw new IllegalArgumentException("The urlStatus argument is required");
         if (campaign == null) throw new IllegalArgumentException("The campaign argument is required");

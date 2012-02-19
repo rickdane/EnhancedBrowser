@@ -1,5 +1,6 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -16,7 +17,8 @@ import java.util.List;
  */
 public class UrlXmlHandler extends DefaultHandler {
 
-    List<String> urls = new ArrayList<String>();
+    List<Url> urls = new ArrayList<Url>();
+    Url url;
 
     private CharArrayWriter contents = new CharArrayWriter();
 
@@ -24,16 +26,33 @@ public class UrlXmlHandler extends DefaultHandler {
                              String qName, Attributes atts) {
         contents.reset();
 
+        if (qName.equalsIgnoreCase("result")) {
+            url = new Url();
+            urls.add(url);
+        }
+
     }
 
     public void endElement(String namespaceURI,
                            String localName,
                            String qName) {
-
+        
         if (qName.equalsIgnoreCase("url")) {
-            String url = contents.toString();
-            urls.add(url);
+            url.setUrl(contents.toString());
         }
+
+        if (qName.equalsIgnoreCase("jobtitle")) {
+            url.setTitle(contents.toString());
+        }
+
+        if (qName.equalsIgnoreCase("company")) {
+            url.setCompany(contents.toString());
+        }
+
+        if (qName.equalsIgnoreCase("snippet")) {
+            url.setPreview(contents.toString());
+        }
+
     }
 
     public void characters(char[] ch, int start, int length) {
@@ -41,7 +60,7 @@ public class UrlXmlHandler extends DefaultHandler {
         contents.write(ch, start, length);
     }
 
-    public List<String> getUrls() {
+    public List<Url> getUrls() {
         return urls;
     }
 

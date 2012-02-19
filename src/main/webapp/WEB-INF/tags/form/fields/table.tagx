@@ -100,6 +100,8 @@
 
         <c:forEach items="${data}" var="item">
 
+            <c:set var="url" value="${item.url}" scope="request"/>
+
             <tr>
                 <c:forTokens items="${columnProperties}" delims="${'&#9999;'}" var="column" varStatus="num">
                     <c:set var="columnMaxLength" value="${lengths[num.count-1]}"/>
@@ -113,7 +115,7 @@
                         <c:set var="onClick" value="${onClickAction}(${onClickParams},${itemId})"/>
                     </c:if>
 
-                    <td modelId="${itemId}" class='${cssClassTd}' onclick='${onClick}'>
+                    <td modelId="${itemId}" class='${cssClassTd}' url="${url}">
                         <c:choose>
                             <c:when test="${columnType eq 'date'}">
                                 <spring:escapeBody>
@@ -141,13 +143,10 @@
                 </c:forTokens>
 
 
-                <!--<c:if test="${!empty columnModelId}">-->
-                <!--<c:set var="modelId" value="itemId"/>-->
-                <!--</c:if>-->
                 <c:if test="${show}">
-                    <td  modelId="${modelId}">
-                        <!--<spring:selectedUrl value="${path}/${itemId}" var="show_form_url"/>-->
-                        <!--<spring:selectedUrl value="/resources/images/show.png" var="show_image_url"/>-->
+
+                    <td  modelId="${modelId}" url="${url}">
+
                         <spring:message arguments="${typeName}" code="entity_show" var="show_label" htmlEscape="false"/>
                         <a href="#" onClick="ajaxLoadWidget('${show_form_url}')" alt="${fn:escapeXml(show_label)}"
                            title="${fn:escapeXml(show_label)}">
@@ -159,11 +158,7 @@
                 <c:if test="${empty renderCrudLinks or renderCrudLinks}">
                     <c:if test="${update}">
                         <td  modelId="${itemId}">
-                            <!--<spring:selectedUrl value="${path}/${itemId}" var="update_form_url">-->
-                                <!--<spring:param name="form"/>-->
-                            <!--</spring:selectedUrl>-->
-                            <!--<spring:selectedUrl value="/resources/images/update.png" var="update_image_url"/>-->
-                            <!--<spring:message arguments="${typeName}" code="entity_update" var="update_label"-->
+
                                             htmlEscape="false"/>
                             <a href="#" onClick="ajaxLoadWidget('${update_form_url}')"
                                alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
@@ -173,9 +168,8 @@
                         </td>
                     </c:if>
                     <c:if test="${delete}">
-                        <td  modelId="${itemId}">
-                            <!--<spring:selectedUrl value="${path}/${itemId}" var="delete_form_url"/>-->
-                            <!--<spring:selectedUrl value="/resources/images/delete.png" var="delete_image_url"/>-->
+                        <td  modelId="${itemId}"  url="${url}">
+
                             <form:form action="${delete_form_url}" method="DELETE">
                                 <spring:message arguments="${typeName}" code="entity_delete" var="delete_label"
                                                 htmlEscape="false"/>
@@ -201,14 +195,12 @@
             </tr>
         </c:forEach>
         <tr>
-            <td  modelId="${itemId}" colspan="${colCounter}">
+            <td  modelId="${itemId}" colspan="${colCounter}" url="${url}">
                 <c:if test="${empty create or create}">
             <span class="new">
-              <!--<spring:selectedUrl value="${path}" var="create_url">-->
-                  <!--<spring:param name="form"/>-->
-              <!--</spring:selectedUrl>-->
+
               <a href="#" onClick="ajaxLoadWidget('${create_url}')">
-                  <!--<spring:selectedUrl value="/resources/images/add.png" var="create_img_url"/>-->
+
                   <spring:message arguments="${typeName}" code="global_menu_new" var="add_message" htmlEscape="false"/>
                   <img alt="${fn:escapeXml(add_message)}" src="${create_img_url}" title="${fn:escapeXml(add_message)}"/>
               </a>

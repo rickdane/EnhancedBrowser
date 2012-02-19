@@ -8,5 +8,8 @@
         <field:display field="website" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_website" object="${url}" z="pUusE+DVeyHlWrDyFw9sScP/LaQ="/>
         <field:display field="urlStatus" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_urlStatus" object="${url}" z="1P8Gy4/udTGUsOywSwjSK5n8zqY="/>
         <field:display calendar="true" dateTimePattern="${url_datelastpostedto_date_format}" field="dateLastPostedTo" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_dateLastPostedTo" object="${url}" z="JDrhFJSq3jgdNjRBDDF+4MmGC7E="/>
+        <field:display field="title" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_title" object="${url}" z="5qQnC4jhqk3sgiBYFKjb4GUhqr0="/>
+        <field:display field="preview" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_preview" object="${url}" z="yEqcmvg0QQaHGamEnDhiP/zO0Qg="/>
+        <field:display field="company" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_company" object="${url}" z="vPMazRUqDt8eOpeM9n+EyH+yCGc="/>
     </page:show>
 </div>

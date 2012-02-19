@@ -23,7 +23,6 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
             function () {
                 lastClickedIsSelectMenu = true;
 
-                obj.clickCampaignSelectList()
             });
     }
 
@@ -37,14 +36,22 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
         iframeManager.loadUrlIntoIframe(url)
     }
 
-    this.clickCampaignSelectList = function () {
+    this.clickCampaignSelectList = function (callback) {
 
         //TODO: need to generalize this, not hard-code it
         var path = appPrefix + "/campaigns/select/"
 
         var selectedValue = $("#selectform").val()
 
-        ajaxUtility.ajaxGetNoCallback(path + selectedValue)
+        $.get(
+            path + selectedValue,
+            "{key:value}",
+            function (data) {
+                callback()
+            },
+            "html"
+        );
+
     }
 
     this.changeUrlStatus = function (status, callbackAfter) {
@@ -83,11 +90,19 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
     this.setCurrentStatus = function (status, targetDivInpt) {
 
-        curStatus = status
+        var obj = this
 
-        var endPoint = "/urls/findByStatus/CURUSER/" + status
+        var callback = function () {
+            curStatus = status
 
-        this.ajaxLoadWidget(endPoint, urlTableHolder, this.urlTableLoadCallback, this)
+            var endPoint = "/urls/findByStatus/CURUSER/" + status
+
+            obj.ajaxLoadWidget(endPoint, urlTableHolder, obj.urlTableLoadCallback, obj)
+        }
+
+
+        this.clickCampaignSelectList(callback)
+
 
     }
 
@@ -102,6 +117,8 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
         this.registerWithSideMenu("div." + sideBarDivId)
 
+        var obj = this
+
         $("#" + sideBarDivId).mouseleave(
             function () {
 
@@ -112,13 +129,21 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
                 $("#" + sideBarDivId).hide();
 
-            });
+            }
+        );
+
+        $("#" + sideBarDivId).hover(
+            function () {
+                lastClickedIsSelectMenu = false
+
+            }
+        );
 
 
         this.ajaxLoadWidget("/campaigns/selectForSession", "campaignSelectAjax", this.ajaxLoadWidgetDefaultCallback)
 
-
     }
+
 
     this.ajaxLoadWidget = function (endpoint, targetDiv, callBack, curObj) {
 
@@ -156,17 +181,47 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
                 modelId = $(this).attr("modelId")
 
-                url = $(this).html()
+                url = $(this).attr("url")
 
                 curObj.selectUrlinSession(url, modelId)
             });
     }
 
+    this.selectMenuClickCount = 0
+
     this.ajaxLoadWidgetDefaultCallback = function (targetDiv, data, obj) {
 
         $('#' + targetDiv).html(data)
 
-        obj.urlTableLoadCallback()
+        obj.urlTableLoadCallback(targetDiv, data, obj)
+
+
+        $("#" + selectFormClass).mouseleave(
+            function () {
+
+
+            }
+        );
+
+        $("#" + selectFormClass).click(
+            function () {
+
+                if (obj.selectMenuClickCount >= 1) {
+
+
+                    $("#" + sideBarDivId).click()
+
+
+                    lastClickedIsSelectMenu = false
+
+                    obj.selectMenuClickCount = 0
+                    return
+                }
+
+                obj.selectMenuClickCount++
+
+            }
+        );
 
         var curElement = $("." + urlDisplayTableClass).first()
 
@@ -180,7 +235,6 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
             }
         }
 
-        //manually select from list (figure out how to genericize this)
         obj.registerWithSideMenuSelect("#" + selectFormClass)
     }
 

@@ -53,9 +53,9 @@
                         <jsp:text/>
                     </div>
                     <br/>
-                    <img title="teesss" class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png"
+                    <img  title="Show Processed Urls" class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png"
                          href="#"/>
-                    <img class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
+                    <img  title="Show Blocked Urls" class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
                 </div>
             </li>
         </ul>
@@ -86,13 +86,13 @@
         <br/>
         <br/>
         <span title="New Job Urls">
-            <img class="linkIcon" id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
+            <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
         </span>
         <span title="Processed Job Urls">
-        <img class="linkIcon" id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
+        <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
         </span>
         <span title="Blocked Job Urls">
-        <img class="linkIcon" id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
+        <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
         </span>
         <br/>
         <br/>

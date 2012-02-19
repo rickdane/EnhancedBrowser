@@ -396,10 +396,6 @@ table a:link {
     color: #303030;
 }
 
-.utilbox {
-    width: 18px;
-}
-
 
 fieldset {
     background: #B8B8CC;
@@ -472,27 +468,6 @@ fieldset th {
     padding: 2px 8px;
     font-size: 11px;
     color: #888888;
-}
-
-.dijitArrowButton {
-    height: 20px;
-}
-
-.dijitTextArea {
-    min-height: 5.5em !important;
-    max-height: 22em !important;
-    overflow-y: auto !important;
-    max-width: 175px;
-}
-
-.RichTextEditable {
-    min-height: 18em !important;
-    max-height: 18em !important;
-}
-
-.flag {
-    height: 11px;
-    width: 16px;
 }
 
 

@@ -19,6 +19,12 @@ public class Url {
 
     private String url;
 
+    private String title;
+
+    private String preview;
+
+    private String company;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @NotNull
     private Campaign campaign;

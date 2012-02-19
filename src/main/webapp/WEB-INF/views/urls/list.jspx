@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" items="${urls}" z="atcNTgAbNBwMvBSb5dv7fmaz+zY=">
-        <table:table cssClassTd ='urlDisplayTable' htmlId ='urlDisplayTable' show='false' create='false' update='false' delete='false' renderHeader='false' data="${urls}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" path="/urls" z="6qyAUb3lLCqm38EM9+NKnj6Pl0g=">
-            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_url" property="url" z="DZC7wlFSRzg2l7HLqqxcgQ4TVUs="/>
+        <table:table create="false" cssClassTd="urlDisplayTable" data="${urls}" delete="false" htmlId="urlDisplayTable" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url" path="/urls" renderHeader="false" show="false" update="false" z="user-managed">
+            <table:column url="url" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Url_title" property="title" z="DZC7wlFSRzg2l7HLqqxcgQ4TVUs="/>
         </table:table>
     </page:list>
 </div>

@@ -7,6 +7,8 @@
                              description="The identifier for this tag (do not change!)"/>
     <jsp:directive.attribute name="property" type="java.lang.String" required="true" rtexprvalue="true"
                              description="The property (field name) of the dataset to be displayed in a column (required)."/>
+    <jsp:directive.attribute name="url" type="java.lang.String" required="false" rtexprvalue="true"
+                             description="A url value, if applicable, that is set as an element attribute"/>
     <jsp:directive.attribute name="maxLength" type="java.lang.Integer" required="false" rtexprvalue="true"
                              description="Max displayed text length (default '10'). Unlimited if negative"/>
     <jsp:directive.attribute name="label" type="java.lang.String" required="false" rtexprvalue="true"
@@ -78,6 +80,10 @@
     </c:if>
 
     <c:if test="${modelId}">
+
         <c:set var="columnModelId" value="${property}" scope="request"/>
     </c:if>
+
+
+
 </jsp:root>

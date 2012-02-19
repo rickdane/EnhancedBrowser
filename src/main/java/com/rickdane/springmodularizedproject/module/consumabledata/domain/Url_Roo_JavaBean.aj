@@ -19,6 +19,30 @@ privileged aspect Url_Roo_JavaBean {
         this.url = url;
     }
     
+    public String Url.getTitle() {
+        return this.title;
+    }
+    
+    public void Url.setTitle(String title) {
+        this.title = title;
+    }
+    
+    public String Url.getPreview() {
+        return this.preview;
+    }
+    
+    public void Url.setPreview(String preview) {
+        this.preview = preview;
+    }
+    
+    public String Url.getCompany() {
+        return this.company;
+    }
+    
+    public void Url.setCompany(String company) {
+        this.company = company;
+    }
+    
     public Campaign Url.getCampaign() {
         return this.campaign;
     }
