@@ -53,9 +53,15 @@
                         <jsp:text/>
                     </div>
                     <br/>
-                    <img  title="Show Processed Urls" class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png"
+                    <span title="Mark as Processed">
+                    <img id="mark1" class="urlStatus_MarkProcessed linkIcon urlStatusSelectIcon"
+                         src="/icons/status_processed.png"
                          href="#"/>
-                    <img  title="Show Blocked Urls" class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
+                    </span>
+                    <span style="padding-right: 25px;" title="Mark as Blocked">
+                    <img id="mark2" class="urlStatus_MarkBlocked linkIconurl StatusSelectIcon"
+                         src="/icons/status_blocked.png" href="#"/>
+                    </span>
                 </div>
             </li>
         </ul>
@@ -85,43 +91,57 @@
         Display Urls of Status:
         <br/>
         <br/>
-        <span title="New Job Urls">
-            <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayNew" src="/icons/display_new.png" href="#"/>
-        </span>
-        <span title="Processed Job Urls">
-        <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayProcessed" src="/icons/display_processed.png" href="#"/>
-        </span>
-        <span title="Blocked Job Urls">
-        <img style="padding-right: 15px;" class="linkIcon" id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png" href="#"/>
-        </span>
+        <ul id="loadTypeList" class="inlineList">
+            <li class="selectTypeButton" title="New Job Urls">
+                <img class="linkIcon" id="sideMenu_DisplayNew" src="/icons/display_new.png"
+                     href="#"/>
+            </li>
+            <li style="left: 45px;" class="selectTypeButton" title="Processed Job Urls">
+                <img class="linkIcon" id="sideMenu_DisplayProcessed"
+                     src="/icons/display_processed.png" href="#"/>
+            </li>
+
+            <li style="left: 90px;" class="selectTypeButton" title="Blocked Job Urls">
+                <img class="linkIcon" id="sideMenu_DisplayBlocked" src="/icons/display_blocked.png"
+                     href="#"/>
+            </li>
+        </ul>
+
         <br/>
         <br/>
-         <span style="padding-right: 15px;"  > Update Status:</span> AutoRun:
+        <span style="padding-right: 15px;"> Update Status:</span> AutoRun:
         <br/>
         <br/>
-                <span title="Show Processed Urls">
-       <img class="urlStatus_MarkProcessed linkIcon" src="/icons/status_processed.png" href="#"/>
+
+        <div id="controlsContainer">
+
+                <span class="absolutePosition" title="Mark as Processed">
+       <img id="mark3" class="urlStatus_MarkProcessed linkIcon urlStatusSelectIcon" src="/icons/status_processed.png"
+            href="#"/>
         </span>
-                <span style="padding-right: 25px;"  title="Show Blocked Urls">
-          <img class="urlStatus_MarkBlocked linkIcon" src="/icons/status_blocked.png" href="#"/>
+                <span class="absolutePosition" style="padding-right: 25px; left: 30px;" title="Mark as Blocked">
+          <img id="mark4" class="urlStatus_MarkBlocked linkIcon urlStatusSelectIcon" src="/icons/status_blocked.png"
+               href="#"/>
         </span>
-                <span title="Start AutoRun">
+                <span style=" left: 90px;" class="absolutePosition" title="Start AutoRun">
        <img class="linkIcon" id="autorunStart" src="/icons/start.png" href="#"/>
         </span>
-                <span title="Pause AutoRun">
+                <span style="left: 120px;" class="absolutePosition" title="Pause AutoRun">
          <img class="linkIcon" id="autorunStop" src="/icons/pause.png" href="#"/>
         </span>
 
+        </div>
         <br/>
-
+        <br/>
+        <br/>
 
         <div id="urlListHolder">
             <jsp:text/>
         </div>
 
-
         <br/>
 
+        <br/>
             <span id='indeed_at'><a href="http://www.indeed.com/">jobs</a> by <a
                     href="http://www.indeed.com/" title="Job Search"><img
                     src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
@@ -131,7 +151,7 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
 
     <div id="enhancedBrowser_iframe">
 
-        <iframe scrolling="no"  src="http://indeed.com" id='iframeMain' width="100%" height="100%">
+        <iframe scrolling="no" src="http://indeed.com" id='iframeMain' width="100%" height="100%">
 
         </iframe>
         <br/>

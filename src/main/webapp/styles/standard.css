@@ -160,6 +160,8 @@ body {
     z-index: 1;
 }
 
+
+
 #iframeMain {
     width: 100%;
     height: 100%;
@@ -323,6 +325,10 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
     background-color: #EFEFEF;
+}
+
+tr:hover{
+    background-color:#B2C2D1;
 }
 
 a:link {
@@ -493,3 +499,38 @@ fieldset th {
 [title] {
     position:relative;
 }
+
+.selectTypeButton{
+
+}
+
+#loadTypeList {
+    position: absolute;
+    top: 100px;
+}
+
+.inlineList {
+    height: 40px;
+    display: inline;
+    -moz-padding-start: 0px;
+    -webkit-padding-start: 0px;
+    vertical-align: top;
+}
+
+.inlineList li{
+    position: absolute;
+    display: inline;
+    list-style-type: none;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+.absolutePosition{
+    position: absolute;
+}
+
+#controlsContainer{
+    position: absolute;
+    top: 172px;
+}
+
