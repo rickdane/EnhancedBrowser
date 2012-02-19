@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51092957-6dc0-46fa-bc71-5b47ca7ab37b" name="Revert: heroku?&#10;(078a806470d92dba82be710ccfa127684dab2690)" comment="xml parsing of Indeed API">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainMenu/index.jspx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainMenu/views.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/AjaxUtility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/SideMenu.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/lib/aopalliance.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-logging.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.annotation.jar" afterPath="" />
@@ -101,13 +95,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_webflow_spring_js_resources_2_2_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_webflow_spring_js_resources_2_2_1_RELEASE.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_0_801_jdbc3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_0_801_jdbc3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Url_Roo_Finder.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Url_Roo_Finder.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/UrlController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/UrlController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/enhancedBrowser/web/EnhancedBrowserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/enhancedBrowser/web/EnhancedBrowserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/enhancedBrowser.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/enhancedBrowser.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/AutoRun.js" afterPath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/AutoRun.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/Base.js" afterPath="$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/Base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/standard.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/standard.css" />
     </list>
     <ignored path="SpringModularizedProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -205,7 +192,7 @@
       <file leaf-file-name="enhancedBrowser.jspx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/enhancedBrowser.jspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="24" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.078947365">
+            <state line="85" column="24" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.032894738">
               <folding />
             </state>
           </provider>
@@ -214,7 +201,7 @@
       <file leaf-file-name="standard.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/standard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="-11.56">
+            <state line="145" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1329613403000" expanded="true" signature="541:590" placeholder="{...}" />
               </folding>
@@ -329,6 +316,53 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -923,69 +957,22 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="231" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="239" />
     <property name="project.structure.proportion" value="0.0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="239" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="236" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="251" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="725" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="723" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="725" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="250" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="237" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -1004,8 +991,8 @@
     <property name="options.lastSelected" value="com.zeroturnaround.javarebel.idea.plugin.PluginSettingsComponent" />
     <property name="project.structure.side.proportion" value="0.11655012" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig" persistUploadOnCheckin="false" />
   <component name="RecentsManager">
@@ -1101,24 +1088,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1152,6 +1121,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -1169,17 +1156,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -1206,6 +1182,17 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -1563,18 +1550,18 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15929204" sideWeight="0.9612903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JavaRebel" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52724594" sideWeight="0.4420103" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3601804" sideWeight="0.18262151" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35953608" sideWeight="0.33873343" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3601804" sideWeight="0.51693666" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29013255" sideWeight="0.6546392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35953608" sideWeight="0.36082473" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29013255" sideWeight="0.6546392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890856" sideWeight="0.71032256" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52724594" sideWeight="0.4420103" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1612,7 +1599,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="javascript is now object oriented" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-worked javascript to be object oriented, extensive UI work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1648,6 +1635,7 @@
     <MESSAGE value="javascript functionality" />
     <MESSAGE value="now it actually has a half-decent UI" />
     <MESSAGE value="javascript is now object oriented" />
+    <MESSAGE value="re-worked javascript to be object oriented, extensive UI work" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1708,94 +1696,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/AutoRun.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="9" selection-start="527" selection-end="527" vertical-scroll-proportion="-7.2">
-          <folding />
-        </state>
+        <state line="23" column="9" selection-start="527" selection-end="527" vertical-scroll-proportion="-7.2" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/AjaxUtility.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="50" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/Base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="22" selection-start="2786" selection-end="2786" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="117" column="22" selection-start="2786" selection-end="2786" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/script/javascript/enhancedBrowser/SideMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="56" selection-start="2888" selection-end="2888" vertical-scroll-proportion="-61.2">
-          <folding />
-        </state>
+        <state line="102" column="56" selection-start="2888" selection-end="2888" vertical-scroll-proportion="-61.2" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/enhancedBrowser/web/EnhancedBrowserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="39" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="24" column="39" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Url_Roo_Jpa_ActiveRecord.aj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="80" selection-start="1545" selection-end="1615" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="36" column="80" selection-start="1545" selection-end="1615" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/UrlController_Roo_Controller.aj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="60" selection-start="3086" selection-end="3086" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="63" column="60" selection-start="3086" selection-end="3086" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Url.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="28" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="39" column="28" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Url_Roo_Finder.aj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="38" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.0">
+        <state line="26" column="38" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/UrlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="28" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/enhancedBrowser.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="24" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.032894738">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/standard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="-11.56">
+        <state line="145" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1329613403000" expanded="true" signature="541:590" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/UrlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="28" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/enhancedBrowser.jspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="24" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.078947365">
-          <folding />
         </state>
       </provider>
     </entry>
