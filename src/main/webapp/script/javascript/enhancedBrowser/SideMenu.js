@@ -1,9 +1,14 @@
 function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, autoRun) {
 
+    this.curStatus = "ACTIVE"
+
     var sideBarDivId = "enhancedBrowser_sidebar"
     var urlDisplayTableClass = "urlDisplayTable"
     var selectFormClass = "selectform"
+    this.selectFormElement = "selectform"
     var urlTableHolder = "urlListHolder"
+    this.urlListClickedColor = "#336699"
+    this.urlListClickedFontColor = "#fff"
 
     //leave as global for now, JS is messy with this sort of thing so its hard to find an elegant solution
     lastClickedIsSelectMenu = false
@@ -26,14 +31,48 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
             });
     }
 
-    this.selectUrlinSession = function (url, modelId) {
+    this.selectUrlinSession = function (url, modelId, jqueryEle) {
+
+        //for a case where its not being called form listener but instead called from within code where we just want to load the first item in the list
+        if (jqueryEle == null) {
+            jqueryEle = $(".urlDisplayTable").first()
+        }
 
         //TODO: need to generalize this, not hard-code it
         var path = appPrefix + "/urls/select/"
 
-        ajaxUtility.ajaxGetNoCallback(path + modelId)
+        var endpoint = path + modelId
 
-        iframeManager.loadUrlIntoIframe(url)
+        var obj = this
+
+        $.get(
+            endpoint,
+            "{key:value}",
+            function (data) {
+                obj.selectCurInUrlList(obj, jqueryEle)
+
+                iframeManager.loadUrlIntoIframe(url)
+
+            },
+            "html"
+        );
+
+    }
+
+    this.selectCurInUrlList = function (obj, jqueryEle) {
+
+        var elements = $("." + urlDisplayTableClass)
+
+        //reset the background color on any clicked elements in the list
+        elements.each(function () {
+            $(this).css('background-color', '');
+            $(this).css('color', '');
+
+        });
+
+        $(jqueryEle).css("background-color", obj.urlListClickedColor)
+        $(jqueryEle).css("color", obj.urlListClickedFontColor)
+
     }
 
     this.clickCampaignSelectList = function (callback) {
@@ -54,54 +93,49 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
     }
 
-    this.changeUrlStatus = function (status, callbackAfter) {
+    this.changeUrlStatus = function (status, callbackAfter, suppressAutorunPause, obj) {
 
         var endpoint = '/urls/updateCurStatus/' + status
 
-        var obj = this
+        if (obj == null) {
+            var obj = this
+        }
 
         $.get(
             endpoint,
             "{key:value}",
             function (data) {
 
-                tmpFn = function (targetDiv, data, curObj) {
-                    $("#" + urlTableHolder).html(data)
-                    obj.setCurrentStatus('BLOCKED', 'urlListHolder')
-                }
 
-                obj.ajaxLoadWidget('/urls/findByStatus/CURUSER/' + curStatus, urlTableHolder, tmpFn, callbackAfter)
+                obj.setCurrentStatus(obj.curStatus, 'urlListHolder', suppressAutorunPause)
 
-                var displayVal = properties[status]
-                textDisplayManager.temporaryTextDisplay("autoRun_text", displayVal, .5)
+                obj.clickUrl(null, obj, suppressAutorunPause)
+
             },
             "html"
         );
     }
 
-    this.changeUrlStatusCallback = function () {
+
+    this.changeUrlStatusCallback = function (obj) {
 
         var url = $("." + urlDisplayTableClass).first().html()
 
         var modelId = $("." + urlDisplayTableClass).first().attr("modelid")
 
-        this.selectUrlinSession(url, modelId)
+        obj.selectUrlinSession(url, modelId)
     }
 
-    this.setCurrentStatus = function (status, targetDivInpt) {
+    this.setCurrentStatus = function (status, targetDivInpt, suppressAutorunPause) {
 
         var obj = this
 
-        var callback = function () {
-            curStatus = status
-
-            var endPoint = "/urls/findByStatus/CURUSER/" + status
-
-            obj.ajaxLoadWidget(endPoint, urlTableHolder, obj.urlTableLoadCallback, obj)
-        }
+        this.curStatus = status
 
 
-        this.clickCampaignSelectList(callback)
+        var endPoint = "/urls/findByStatus/CURUSER/" + status
+
+        obj.ajaxLoadWidget(endPoint, urlTableHolder, obj.urlTableLoadCallback, obj, suppressAutorunPause)
 
 
     }
@@ -111,6 +145,8 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
     }
 
     this.init = function () {
+
+        this.autoRun = autoRun
 
         $("#" + sideBarDivId).hide();
 
@@ -146,10 +182,19 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
         this.ajaxLoadWidget("/campaigns/selectForSession", "campaignSelectAjax", this.ajaxLoadWidgetDefaultCallback)
 
+        this.registerListeners()
+
+    }
+
+    this.selectMenuRegisterCallback = function () {
+        $("#" + this.selectFormElement).select(function () {
+
+            obj.clickCampaignSelectList(null)
+        });
     }
 
 
-    this.ajaxLoadWidget = function (endpoint, targetDiv, callBack, curObj) {
+    this.ajaxLoadWidget = function (endpoint, targetDiv, callBack, curObj, suppressAutorunPause) {
 
         endpoint = appPrefix + endpoint
 
@@ -162,33 +207,56 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
             "{key:value}",
             function (data) {
 
-                callBack(targetDiv, data, curObj)
+                if (callBack != null) {
+                    callBack(targetDiv, data, curObj, suppressAutorunPause)
+                }
 
             },
             "html"
         );
     }
 
-    this.urlTableLoadCallback = function (targetDiv, data, curObj) {
+    this.urlTableLoadCallback = function (targetDiv, data, obj, suppressAutorunPause) {
 
-        if (curObj == null) {
-            curObj = this
+        if (obj == null) {
+            obj = this
         }
 
         $("#" + targetDiv).html(data)
 
-        $(".urlDisplayTable").click(
+        obj.clickUrl(null, obj, suppressAutorunPause)
+
+        //prepend a select label in the select list
+        var labelVal = "-- Select Campaign --"
+        $("#" + this.selectFormElement).prepend("<option>" + labelVal + "</option>")
+        $("#" + this.selectFormElement).val(labelVal)
+
+        $("." + urlDisplayTableClass).click(
             function () {
+                obj.clickUrl(this, obj)
 
-                //clicking a url manually needs to always stop the autorun as its not worth the complexity to allow any other use case
-                autoRun.stopAutorun()
-
-                modelId = $(this).attr("modelId")
-
-                url = $(this).attr("url")
-
-                curObj.selectUrlinSession(url, modelId)
             });
+    }
+
+    this.clickUrl = function (jqueryEle, obj, suppressAutorunPause) {
+
+        //for a case where its not being called form listener but instead called from within code where we just want to load the first item in the list
+        if (jqueryEle == null) {
+            jqueryEle = $("." + urlDisplayTableClass).first()
+        }
+
+        //clicking a url manually needs to always stop the autorun as its not worth the complexity to allow any other use case
+        if (!suppressAutorunPause) {
+            this.autoRun.stopAutorun()
+        }
+
+
+        var modelId = $(jqueryEle).attr("modelId")
+
+        var url = $(jqueryEle).attr("url")
+
+        obj.selectUrlinSession(url, modelId, jqueryEle)
+
     }
 
     this.selectMenuClickCount = 0
@@ -199,16 +267,18 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
 
         obj.urlTableLoadCallback(targetDiv, data, obj)
 
-
-        $("#" + selectFormClass).mouseleave(
-            function () {
-
-
-            }
-        );
-
+        //The weirdness here is to deal with an issue that occurs with the sidebar  hide / show mouseover functionality, its basically a fundamental bug in
+        // Jquery, or something deeper, and this should later be replaced with a menu that does not use HTML select functioanlity (a custom menu made from DIV's, etc)
         $("#" + selectFormClass).click(
             function () {
+
+                var campaignSelectCallback = function () {
+
+                    obj.setCurrentStatus('ACTIVE', 'urlListHolder')
+                }
+
+                obj.clickCampaignSelectList(campaignSelectCallback)
+
 
                 if (obj.selectMenuClickCount >= 1) {
 
@@ -227,19 +297,36 @@ function SideMenu(ajaxUtility, textDisplayManager, iframeManager, properties, au
             }
         );
 
-        var curElement = $("." + urlDisplayTableClass).first()
-
-        if (curElement != null && curElement != undefined) {
-
-            var curUrl = curElement.html()
-            var curUrlModelId = curElement.attr("modelid")
-
-            if (curUrl != undefined && curUrlModelId != undefined) {
-                obj.selectUrlinSession(curUrl, curUrlModelId)
-            }
-        }
 
         obj.registerWithSideMenuSelect("#" + selectFormClass)
+
+    }
+
+    this.registerListeners = function () {
+
+        var obj = this
+
+        // register listeners on DOM elements
+        $("#sideMenu_DisplayNew").click(function () {
+            obj.setCurrentStatus('ACTIVE', 'urlListHolder')
+        });
+        $("#sideMenu_DisplayProcessed").click(function () {
+            obj.setCurrentStatus('PROCESSED', 'urlListHolder')
+        });
+        $("#sideMenu_DisplayBlocked").click(function () {
+            obj.setCurrentStatus('BLOCKED', 'urlListHolder')
+        });
+
+        $(".urlStatus_MarkProcessed").click(function () {
+            obj.changeUrlStatus('PROCESSED', obj.urlTableLoadCallback)
+        });
+        $(".urlStatus_MarkBlocked").click(function () {
+            obj.changeUrlStatus('BLOCKED', obj.urlTableLoadCallback)
+        });
+
+        this.autoRun.registerListeners(this)
+
+
     }
 
     this.init()

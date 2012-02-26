@@ -4,8 +4,6 @@ appPrefix = ""
 
 formId_paths = new Array()
 
-curStatus = "ACTIVE"
-
 
 function TextDisplayManager() {
 
@@ -21,6 +19,12 @@ function TextDisplayManager() {
     }
 
     this.temporaryTextHide = function (elementId) {
+
+        elements = $('div.easy_editor');
+        elements.each(function() {
+            $(this).css("border","9px solid red");
+        });
+
         $("#" + elementId).css("display", "none")
     }
 }
@@ -189,29 +193,11 @@ $(document).ready(function () {
     menuManager.showMenu("menuContent_welcome")
 
 
-    // register listeners on DOM elements
-    $("#sideMenu_DisplayNew").click(function () {
-        sideMenu.setCurrentStatus('ACTIVE', 'urlListHolder')
-    });
-    $("#sideMenu_DisplayProcessed").click(function () {
-        sideMenu.setCurrentStatus('PROCESSED', 'urlListHolder')
-    });
-    $("#sideMenu_DisplayBlocked").click(function () {
-        sideMenu.setCurrentStatus('BLOCKED', 'urlListHolder')
-    });
-
     $("#autorunStart").click(function () {
         autoRun.startAutorun()
     });
     $("#autorunStop").click(function () {
         autoRun.stopAutorun()
-    });
-
-    $(".urlStatus_MarkProcessed").click(function () {
-        sideMenu.changeUrlStatus('PROCESSED')
-    });
-    $(".urlStatus_MarkBlocked").click(function () {
-        sideMenu.changeUrlStatus('BLOCKED')
     });
 
 
@@ -238,6 +224,7 @@ $(document).ready(function () {
         iconArr3[0] = "autorunStart"
         iconArr3[1] = "autorunStop"
         iconSizeManager3 = new IconSizeManager(iconArr3, 33)
+
     }
 
     function MenuManager(sideMenuObj) {

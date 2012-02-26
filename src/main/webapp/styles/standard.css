@@ -485,7 +485,7 @@ fieldset th {
     border-radius: 15px;
     content: attr(title); /* This gives the :before the content from the title attribute of the link */
     position: absolute;
-    top:-50px;
+    top:-30px;
     left:0;
     z-index: 5;
     text-decoration: none;
@@ -494,7 +494,7 @@ fieldset th {
     padding: 6px 6px 15px 6px;
     line-height: 100%;
     opacity: 1;
-    height: 5px;
+    height: 2px;
     width: 100px;
     background: #222 bottom left no-repeat; /* This makes the tooltip a bit prettier. view/download arrow.png*/
 }

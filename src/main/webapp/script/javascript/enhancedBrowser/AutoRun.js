@@ -1,6 +1,6 @@
 function AutoRun(textDisplayManager, properties) {
 
-    var autoRunIntervalSeconds = 7
+    this.autoRunIntervalSeconds = 7
 
     this.autoRunOn = false
 
@@ -8,11 +8,18 @@ function AutoRun(textDisplayManager, properties) {
 
     this.SKIP_STATUS = "BLOCKED"
 
+
     this.startAutorun = function () {
+
+        this.curElementIndex = 1
 
         this.autoRunOn = true
 
-        setTimeout(this.autoRunNextPage, autoRunIntervalSeconds * 1000)
+        var obj = this
+
+        setTimeout(function () {
+            obj.autoRunNextPage(obj)
+        }, obj.autoRunIntervalSeconds * 1000)
 
         var displayVal = properties["autoRun_started"]
         textDisplayManager.temporaryTextDisplay("autoRun_text", displayVal, 2)
@@ -29,39 +36,45 @@ function AutoRun(textDisplayManager, properties) {
     }
 
 
-    this.autoRunNextPage = function () {
+    this.autoRunNextPage = function (obj) {
 
-        if (this.autoRunOn && curStatus != "BLOCKED") {
+        if (obj.autoRunOn && obj.sideMenu.curStatus != "BLOCKED") {
 
-            var curElement = $(".urlDisplayTable").first()
-            var curUrlModelId = curElement.attr("modelid")
-            var curUrl = curElement.html()
+            var elements = $(".urlDisplayTable")
 
-            if (curUrlModelId == this.lastUrlModelId) {
+            var curElement = elements[obj.curElementIndex]
 
-                autoRunMarkSkipped(curUrl, curUrlModelId)
-
-                curUrlModelId = $(".urlDisplayTable").first().attr("modelid")
+            if (curElement == undefined) {
+                obj.curElementIndex = 0
+            }
+            else {
+                obj.curElementIndex++
             }
 
-            this.lastUrlModelId = curUrlModelId
+            this.sideMenu.clickUrl(curElement, this.sideMenu,true)
 
-            setTimeout(this.autoRunNextPage, autoRunIntervalSeconds * 1000)
+
+            setTimeout(function () {
+                obj.autoRunNextPage(obj)
+            }, obj.autoRunIntervalSeconds * 1000)
+
         }
     }
 
-    this.autoRunMarkSkipped = function () {
 
-        //note: order these are called in is important
+    this.registerListeners = function (sideMenu) {
 
+        this.sideMenu = sideMenu
 
-        var callback = function () {
-            changeUrlStatusCallback()
-        }
-
-        changeUrlStatus(SKIP_STATUS, callback)
+        $(".urlStatus_MarkProcessedAutoRun").click(function () {
+            sideMenu.changeUrlStatus('PROCESSED', sideMenu.urlTableLoadCallback, true, sideMenu)
+        });
+        $(".urlStatus_MarkProcessedAutoRun").click(function () {
+            sideMenu.changeUrlStatus('BLOCKED', sideMenu.urlTableLoadCallback, true, sideMenu)
+        });
 
     }
+
 }
 
 

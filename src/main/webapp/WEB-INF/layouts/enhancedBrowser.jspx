@@ -69,12 +69,12 @@
                     </div>
                     <br/>
                     <span title="Mark as Processed">
-                    <img id="mark1" class="urlStatus_MarkProcessed linkIcon urlStatusSelectIcon"
+                    <img id="mark1" class="urlStatus_MarkProcessedAutoRun linkIcon urlStatusSelectIcon"
                          src="/icons/status_processed.png"
                          href="#"/>
                     </span>
                     <span style="padding-right: 25px;" title="Mark as Blocked">
-                    <img id="mark2" class="urlStatus_MarkBlocked linkIconurl StatusSelectIcon"
+                    <img id="mark2" class="urlStatus_MarkBlocked linkIconurlAutoRun urlStatusSelectIcon"
                          src="/icons/status_blocked.png" href="#"/>
                     </span>
                 </div>

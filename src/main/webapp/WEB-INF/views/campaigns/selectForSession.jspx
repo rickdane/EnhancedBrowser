@@ -3,6 +3,9 @@
      xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+
+
+
     <form:noFormatting label="Select Campaign" id="d_com_rickdane_springmodularizedproject_module_consumbaledata_domain_Campaign"
                  modelAttribute="campaign" path="/campaigns/select" render="${empty dependencies}"
                  z="ZNGAuYQQ78PRmL2A/ddLP9YIB8A=">

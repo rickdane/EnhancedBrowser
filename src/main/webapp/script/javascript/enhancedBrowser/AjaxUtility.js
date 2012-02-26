@@ -1,4 +1,3 @@
-
 function AjaxUtility() {
 
     this.registerSubmitListener = function (formId, path) {
@@ -13,12 +12,15 @@ function AjaxUtility() {
         });
     }
 
+
+    //
     this.ajaxGetNoCallback = function (endpoint) {
 
         $.get(
             endpoint,
             "{key:value}",
             function (data) {
+
 
             },
             "html"
@@ -54,4 +56,5 @@ function AjaxUtility() {
             "html"
         );
     }
+
 }
