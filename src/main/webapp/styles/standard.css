@@ -537,6 +537,18 @@ fieldset th {
     top: 172px;
 }
 
+#autoRun_markProcessed{
+    position: absolute;
+    top: 62px;
+    left: 70px;
+}
+
+#autoRun_markBlocked{
+    position: absolute;
+    top: 62px;
+    left: 100px;
+}
+
 
 #menuLinkHolder {
 

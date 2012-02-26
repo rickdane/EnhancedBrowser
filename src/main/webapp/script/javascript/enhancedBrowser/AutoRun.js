@@ -8,6 +8,8 @@ function AutoRun(textDisplayManager, properties) {
 
     this.SKIP_STATUS = "BLOCKED"
 
+    autoRun_skipNextAutoIter = false
+
 
     this.startAutorun = function () {
 
@@ -40,18 +42,23 @@ function AutoRun(textDisplayManager, properties) {
 
         if (obj.autoRunOn && obj.sideMenu.curStatus != "BLOCKED") {
 
-            var elements = $(".urlDisplayTable")
+            if (!autoRun_skipNextAutoIter) {
+                var elements = $(".urlDisplayTable")
 
-            var curElement = elements[obj.curElementIndex]
+                var curElement = elements[obj.curElementIndex]
 
-            if (curElement == undefined) {
-                obj.curElementIndex = 0
+                if (curElement == undefined) {
+                    obj.curElementIndex = 0
+                }
+                else {
+                    obj.curElementIndex++
+                }
+
+                this.sideMenu.clickUrl(curElement, this.sideMenu, true)
+
             }
-            else {
-                obj.curElementIndex++
-            }
 
-            this.sideMenu.clickUrl(curElement, this.sideMenu,true)
+            autoRun_skipNextAutoIter = false
 
 
             setTimeout(function () {
@@ -67,9 +74,11 @@ function AutoRun(textDisplayManager, properties) {
         this.sideMenu = sideMenu
 
         $(".urlStatus_MarkProcessedAutoRun").click(function () {
+            autoRun_skipNextAutoIter = true
             sideMenu.changeUrlStatus('PROCESSED', sideMenu.urlTableLoadCallback, true, sideMenu)
         });
-        $(".urlStatus_MarkProcessedAutoRun").click(function () {
+        $(".urlStatus_MarkBlockedAutoRun").click(function () {
+            autoRun_skipNextAutoIter = true
             sideMenu.changeUrlStatus('BLOCKED', sideMenu.urlTableLoadCallback, true, sideMenu)
         });
 

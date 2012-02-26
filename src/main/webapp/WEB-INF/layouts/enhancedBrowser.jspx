@@ -50,8 +50,7 @@
     </div>
 
 
-
-    <div id ="overlayDim">
+    <div id="overlayDim">
 
         <jsp:text/>
     </div>
@@ -68,15 +67,21 @@
                         <jsp:text/>
                     </div>
                     <br/>
-                    <span title="Mark as Processed">
-                    <img id="mark1" class="urlStatus_MarkProcessedAutoRun linkIcon urlStatusSelectIcon"
-                         src="/icons/status_processed.png"
-                         href="#"/>
-                    </span>
-                    <span style="padding-right: 25px;" title="Mark as Blocked">
-                    <img id="mark2" class="urlStatus_MarkBlocked linkIconurlAutoRun urlStatusSelectIcon"
+
+                    <div id="autoRun_markProcessed">
+                        <span class="absolutePosition" title="Mark as Processed">
+                        <img id="mark1" class="urlStatus_MarkProcessedAutoRun linkIcon urlStatusSelectIcon"
+                             src="/icons/status_processed.png"
+                             href="#"/>
+                        </span>
+                    </div>
+                    <div id="autoRun_markBlocked">
+                        <span class="absolutePosition" title="Mark as Blocked">
+                    <img id="mark2" class="urlStatus_MarkBlockedAutoRun linkIcon urlStatusSelectIcon"
                          src="/icons/status_blocked.png" href="#"/>
                     </span>
+                    </div>
+
                 </div>
             </li>
         </ul>
@@ -88,7 +93,6 @@
         <jsp:text/>
 
     </div>
-
 
 
     <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
@@ -189,7 +193,6 @@ vertical-align: middle;" alt="Indeed job search"/></a></span>
         <br/>
 
     </div>
-
 
 
 </div>
